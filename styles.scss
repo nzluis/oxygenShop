@@ -222,7 +222,7 @@ button {
     text-align: center;
 
     .priceCards__title {
-        margin: 3.30rem 0 0.88rem 0;
+        margin: 3.30rem 0 0 0;
         color: #000;
         font-family: Raleway;
         font-size: 2.25rem;
@@ -233,10 +233,28 @@ button {
 
     .priceCards__container {
         display: inline-block;
-        margin: auto 2rem;
+        width: 85%;
+        margin: 1rem 2rem;
         border: 2px solid #FB3B64;
         border-radius: 25px;
         padding: 1.5rem 10%;
+    }
+
+    .priceCards__container:nth-child(3) {
+        border-color: #07ACE6;
+
+        .priceCards__container__leftBox>.leftBox--price {
+            color: #07ACE6
+        }
+
+    }
+
+    .priceCards__container:nth-child(4) {
+        border-color: #55DFB4;
+
+        .priceCards__container__leftBox>.leftBox--price {
+            color: #55DFB4
+        }
     }
 
     .priceCards__container__leftBox,
@@ -246,6 +264,7 @@ button {
 
     .priceCards__container__leftBox {
         vertical-align: middle;
+        min-width: 43%;
 
         h4 {
             color: #13253B;
@@ -264,11 +283,20 @@ button {
             font-weight: 300;
             line-height: 4rem;
         }
+
+        .leftBox--text {
+            color: #13253B;
+            font-family: Raleway;
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
     }
 
     .priceCards__container__rigthBox {
         text-align: left;
-        padding-left: 3rem;
+        padding-left: 1.5rem;
         line-height: 2.7rem;
     }
 
@@ -287,18 +315,35 @@ button {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
 
     .priceCards {
 
         .priceCards__container {
-            margin: auto 2rem;
-            padding: 1.5rem 8%;
+            margin: 1rem 0rem;
+            padding: 1.5rem 5%;
+            // width: 90%;
         }
 
         .priceCards__container__rigthBox {
-            padding-left: 1rem;
-            line-height: 2.7rem;
+            // padding-left: 1%;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 380px) {
+
+    .priceCards {
+
+        .priceCards__container {
+            // margin: 1rem 0rem;
+            // padding: 1.5rem 4%;
+            width: 90%;
+        }
+
+        .priceCards__container__rigthBox {
+            padding-left: .5rem;
         }
     }
 

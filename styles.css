@@ -180,7 +180,7 @@ button {
   text-align: center;
 }
 .priceCards .priceCards__title {
-  margin: 3.3rem 0 0.88rem 0;
+  margin: 3.3rem 0 0 0;
   color: #000;
   font-family: Raleway;
   font-size: 2.25rem;
@@ -190,10 +190,23 @@ button {
 }
 .priceCards .priceCards__container {
   display: inline-block;
-  margin: auto 2rem;
+  width: 85%;
+  margin: 1rem 2rem;
   border: 2px solid #FB3B64;
   border-radius: 25px;
   padding: 1.5rem 10%;
+}
+.priceCards .priceCards__container:nth-child(3) {
+  border-color: #07ACE6;
+}
+.priceCards .priceCards__container:nth-child(3) .priceCards__container__leftBox > .leftBox--price {
+  color: #07ACE6;
+}
+.priceCards .priceCards__container:nth-child(4) {
+  border-color: #55DFB4;
+}
+.priceCards .priceCards__container:nth-child(4) .priceCards__container__leftBox > .leftBox--price {
+  color: #55DFB4;
 }
 .priceCards .priceCards__container__leftBox,
 .priceCards .priceCards__container__rigthBox {
@@ -201,6 +214,7 @@ button {
 }
 .priceCards .priceCards__container__leftBox {
   vertical-align: middle;
+  min-width: 43%;
 }
 .priceCards .priceCards__container__leftBox h4 {
   color: #13253B;
@@ -218,9 +232,17 @@ button {
   font-weight: 300;
   line-height: 4rem;
 }
+.priceCards .priceCards__container__leftBox .leftBox--text {
+  color: #13253B;
+  font-family: Raleway;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 .priceCards .priceCards__container__rigthBox {
   text-align: left;
-  padding-left: 3rem;
+  padding-left: 1.5rem;
   line-height: 2.7rem;
 }
 .priceCards .feature--image,
@@ -236,14 +258,18 @@ button {
   line-height: normal;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   .priceCards .priceCards__container {
-    margin: auto 2rem;
-    padding: 1.5rem 8%;
+    margin: 1rem 0rem;
+    padding: 1.5rem 5%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .priceCards .priceCards__container {
+    width: 90%;
   }
   .priceCards .priceCards__container__rigthBox {
-    padding-left: 1rem;
-    line-height: 2.7rem;
+    padding-left: 0.5rem;
   }
 }
 
