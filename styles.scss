@@ -157,7 +157,7 @@ button {
 
     .productCards__container {
         background-color: white;
-        margin: 2.6rem auto;
+        margin: 2.5rem auto;
         border-radius: 0.3125rem;
         border: 1px solid #E8E9ED;
         background: #FFF;
@@ -203,5 +203,103 @@ button {
 
     .card__container {
         background-color: #55DFB4;
+        position: relative;
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        border: 1px solid #E8E9ED;
+        border-radius: 0.3125rem;
     }
+
+    .trumpet {
+        position: absolute;
+        bottom: -35px;
+        left: .2rem;
+    }
+}
+
+.priceCards {
+    text-align: center;
+
+    .priceCards__title {
+        margin: 3.30rem 0 0.88rem 0;
+        color: #000;
+        font-family: Raleway;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .priceCards__container {
+        display: inline-block;
+        margin: auto 2rem;
+        border: 2px solid #FB3B64;
+        border-radius: 25px;
+        padding: 1.5rem 10%;
+    }
+
+    .priceCards__container__leftBox,
+    .priceCards__container__rigthBox {
+        display: table-cell;
+    }
+
+    .priceCards__container__leftBox {
+        vertical-align: middle;
+
+        h4 {
+            color: #13253B;
+            font-family: Raleway;
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.5rem;
+        }
+
+        p {
+            color: #FB3B64;
+            font-family: "Open Sans";
+            font-size: 2.875rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 4rem;
+        }
+    }
+
+    .priceCards__container__rigthBox {
+        text-align: left;
+        padding-left: 3rem;
+        line-height: 2.7rem;
+    }
+
+    .feature--image,
+    .feature--description {
+        display: inline-block;
+    }
+
+    .feature--description {
+        color: #000;
+        font-family: "Open Sans";
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    .priceCards {
+
+        .priceCards__container {
+            margin: auto 2rem;
+            padding: 1.5rem 8%;
+        }
+
+        .priceCards__container__rigthBox {
+            padding-left: 1rem;
+            line-height: 2.7rem;
+        }
+    }
+
 }
