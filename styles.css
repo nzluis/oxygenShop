@@ -12,25 +12,25 @@ body {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
 }
 
-.container {
+.navbar__container {
   text-align: justify;
   margin: 1rem 1.5rem;
   height: 3rem;
 }
 
-.container:after {
+.navbar__container:after {
   content: "";
   display: inline-block;
   width: 100%;
 }
 
-.title,
-.menu {
+.navbar__container--title,
+.navbar__container--menu {
   display: inline-block;
   vertical-align: middle;
 }
 
-.title {
+.navbar__container--title {
   color: #08A6E4;
   font-family: Raleway;
   font-size: 2rem;
@@ -39,11 +39,11 @@ body {
   line-height: 2.3125rem;
 }
 
-.opening {
+.intro {
   text-align: center;
   margin: 3.5rem auto 2rem auto;
 }
-.opening h3 {
+.intro h3 {
   color: #000;
   text-align: center;
   font-family: Raleway;
@@ -52,7 +52,7 @@ body {
   font-weight: 400;
   line-height: normal;
 }
-.opening p {
+.intro p {
   color: #000;
   text-align: center;
   font-family: "Open Sans";
@@ -62,7 +62,7 @@ body {
   line-height: 1.4375rem;
   margin: 1rem 5rem;
 }
-.opening button {
+.intro button {
   color: #FFF;
   text-align: center;
   font-family: "Open Sans";
@@ -82,11 +82,11 @@ button {
   padding: 4.19px 19.4px;
 }
 
-.laptop img {
+.banner img {
   width: 100%;
   object-fit: cover;
 }
-.laptop p {
+.banner p {
   color: #000;
   text-align: center;
   font-family: Raleway;
@@ -97,18 +97,17 @@ button {
   margin: 0.5rem 2rem;
 }
 
-.card__image {
+.statsCards .card__image {
   text-align: center;
 }
-.card__image .image--relative {
+.statsCards .card__image .image--relative {
   position: relative;
 }
-.card__image .image--person {
+.statsCards .card__image .image--person {
   position: absolute;
   z-index: 1;
 }
-
-.card__number {
+.statsCards .card__number {
   color: #000;
   text-align: center;
   font-family: Raleway;
@@ -118,8 +117,7 @@ button {
   line-height: 1.5rem;
   letter-spacing: 0.3725rem;
 }
-
-.card__description {
+.statsCards .card__description {
   color: #A5A5A5;
   text-align: center;
   font-family: Raleway;
@@ -129,22 +127,19 @@ button {
   line-height: 1.25rem;
 }
 
-.actions {
+.productCards {
   background-color: black;
   padding: 0.5rem 1.9rem;
 }
-
-.actions__container {
+.productCards .productCards__container {
   background-color: white;
   margin: 2.6rem auto;
 }
-
-.actions__container__block {
+.productCards .productCards__container__card {
   margin: auto 1.5rem;
   padding: 2rem 0;
 }
-
-.block__title {
+.productCards .card__title {
   color: #000;
   font-family: Raleway;
   font-size: 1.875rem;
@@ -153,8 +148,7 @@ button {
   line-height: normal;
   margin-bottom: 1.2rem;
 }
-
-.block__description {
+.productCards .card__description {
   color: #000;
   font-family: "Open Sans";
   font-size: 0.875rem;
