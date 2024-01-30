@@ -71,9 +71,6 @@ body {
   font-weight: 700;
   line-height: 1.375rem;
   border: none;
-}
-
-button {
   width: 17rem;
   height: 3.9rem;
   border-radius: 2.5rem;
@@ -189,6 +186,7 @@ button {
   line-height: normal;
 }
 .priceCards .priceCards__container {
+  position: relative;
   display: inline-block;
   width: 85%;
   margin: 1rem 2rem;
@@ -207,6 +205,29 @@ button {
 }
 .priceCards .priceCards__container:nth-child(4) .priceCards__container__leftBox > .leftBox--price {
   color: #55DFB4;
+}
+.priceCards .priceCards__container__button {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3.125rem;
+  width: 9.375rem;
+  border-radius: 1.4375rem;
+  background: #EB476E;
+  color: #FFF;
+  font-family: "Open Sans";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+}
+.priceCards .priceCards__container__button.blue {
+  background-color: #07ACE6;
+}
+.priceCards .priceCards__container__button.green {
+  background-color: #55DFB4;
 }
 .priceCards .priceCards__container__leftBox,
 .priceCards .priceCards__container__rigthBox {
