@@ -109,14 +109,14 @@ button {
     .card__image {
         text-align: center;
 
-        .image--relative {
-            position: relative;
-        }
+        // .image--relative {
+        //     position: relative;
+        // }
 
-        .image--person {
-            position: absolute;
-            z-index: 1;
-        }
+        // .image--person {
+        //     position: absolute;
+        //     z-index: 1;
+        // }
 
         // .image--eye {
         //     position: absolute;
@@ -150,19 +150,36 @@ button {
 }
 
 .productCards {
-    // background-color: #F7F7F7;
-    background-color: black;
+
+    background-color: #F7F7F7;
     ;
-    padding: 0.5rem 1.90rem;
+    padding: 0.5rem 1.2rem;
 
     .productCards__container {
         background-color: white;
         margin: 2.6rem auto;
+        border-radius: 0.3125rem;
+        border: 1px solid #E8E9ED;
+        background: #FFF;
     }
 
     .productCards__container__card {
         margin: auto 1.5rem;
         padding: 2rem 0;
+
+    }
+
+    .card__image {
+        text-align: center;
+    }
+
+    .image--front {
+        position: relative;
+    }
+
+    .image--back {
+        position: absolute;
+
     }
 
     .card__title {
@@ -182,5 +199,9 @@ button {
         font-style: normal;
         font-weight: 400;
         line-height: 1.3125rem;
+    }
+
+    .card__container {
+        background-color: #55DFB4;
     }
 }
