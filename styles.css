@@ -10,11 +10,12 @@ body {
 
 .navbar {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
+  padding-top: 0.6rem;
 }
 
 .navbar__container {
   text-align: justify;
-  margin: 1rem 1.5rem;
+  margin: 0rem 1.5rem;
   height: 3rem;
 }
 
@@ -63,6 +64,13 @@ body {
   margin: 1rem 5rem;
 }
 .intro button {
+  width: 17rem;
+  height: 3.9rem;
+  box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.29);
+  padding: 4.19px 19.4px;
+}
+
+button {
   color: #FFF;
   text-align: center;
   font-family: "Open Sans";
@@ -71,12 +79,8 @@ body {
   font-weight: 700;
   line-height: 1.375rem;
   border: none;
-  width: 17rem;
-  height: 3.9rem;
   border-radius: 2.5rem;
   background: #08A6E4;
-  box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.29);
-  padding: 4.19px 19.4px;
 }
 
 .banner img {
@@ -213,15 +217,7 @@ body {
   transform: translateX(-50%);
   height: 3.125rem;
   width: 9.375rem;
-  border-radius: 1.4375rem;
   background: #EB476E;
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: 0.8125rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  border: none;
 }
 .priceCards .priceCards__container__button.blue {
   background-color: #07ACE6;
@@ -277,6 +273,124 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.contactForm {
+  margin: 3rem 1.9rem;
+}
+.contactForm .contactForm__title {
+  color: #000;
+  font-family: Raleway;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.contactForm .contactForm__subtitle {
+  color: #000;
+  font-family: "Open Sans";
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.375rem;
+  margin-bottom: 2.38rem;
+}
+.contactForm img,
+.contactForm .emailInfo--value,
+.contactForm .phoneInfo--value {
+  display: inline-block;
+  vertical-align: middle;
+  color: #A5A5A5;
+  font-family: "Open Sans";
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.375rem;
+}
+.contactForm .contactForm__form {
+  margin-top: 2.5rem;
+}
+.contactForm .contactForm__form label {
+  display: block;
+  color: #08A6E4;
+  font-family: "Open Sans";
+  font-size: 0.6875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.205rem;
+}
+.contactForm .contactForm__form #email,
+.contactForm .contactForm__form #name {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #95989A;
+  margin: 1.8rem auto;
+}
+.contactForm .contactForm__form .form--consent {
+  display: inline-block;
+}
+.contactForm .contactForm__form .form--consent-text {
+  display: inline-block;
+  color: #707070;
+  font-family: "Open Sans";
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.contactForm .contactForm__form button {
+  display: block;
+  width: 14.125rem;
+  height: 3.5625rem;
+  float: right;
+  margin: 2.06rem 0 2.75rem 0;
+  box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.29);
+}
+
+.footer {
+  background: #F7F7F7;
+  box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.2);
+  clear: both;
+  text-align: justify;
+  padding: 0 1.5rem;
+}
+.footer h2 {
+  margin-top: 1.4rem;
+}
+.footer .footer__copyright,
+.footer .footer__socialMedia {
+  display: inline-block;
+}
+.footer .footer__copyright h2 {
+  color: #08A6E4;
+  font-family: Raleway;
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.875rem;
+}
+.footer .footer__copyright p {
+  color: #A5A5A5;
+  font-family: "Open Sans";
+  font-size: 0.6875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer .footer__socialMedia > img {
+  position: relative;
+  bottom: 8px;
+}
+.footer .icon--facebook {
+  margin-left: 0.6rem;
+}
+
+.footer:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 @media only screen and (max-width: 414px) {
