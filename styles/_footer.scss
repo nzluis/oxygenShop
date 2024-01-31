@@ -1,0 +1,52 @@
+.footer {
+    background: #f7f7f7;
+    box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.20);
+    clear: both;
+    text-align: justify;
+    padding: 0 1.5em;
+
+    &__copyright,
+    &__socialMedia {
+        display: inline-block;
+    }
+
+    &__copyright {
+        &__title {
+            color: #08A6E4;
+            font-family: Raleway;
+            font-size: 1.625rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.875rem;
+            margin-top: 1.4rem;
+        }
+
+        &__subtitle {
+            color: #A5A5A5;
+            font-family: "Open Sans";
+            font-size: 0.6875rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    &__socialMedia {
+
+        &__facebook,
+        &__twitter {
+            position: relative;
+            bottom: .5em;
+        }
+
+        &__facebook {
+            margin-left: .6rem;
+        }
+    }
+
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}
