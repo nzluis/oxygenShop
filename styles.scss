@@ -106,25 +106,32 @@ button {
 }
 
 .statsCards {
+    text-align: center;
+
+    .statsCards--card {
+        margin: 1.56rem 0 3rem 0;
+    }
 
     .card__image {
-        text-align: center;
+        position: relative;
+        margin-bottom: 0.8rem;
 
-        // .image--relative {
-        //     position: relative;
-        // }
+        .image--person {
+            position: absolute;
+            left: 50%;
+        }
 
-        // .image--person {
-        //     position: absolute;
-        //     z-index: 1;
-        // }
+        .image--eye {
+            position: absolute;
+            left: 50%;
+            top: 0.8em;
+        }
 
-        // .image--eye {
-        //     position: absolute;
-        //     top: .7rem;
-        //     right: 8.4rem;
-        //     z-index: 1;
-        // }
+        .image--catalog {
+            position: absolute;
+            left: 50%;
+            top: 10%
+        }
 
     }
 
@@ -137,6 +144,7 @@ button {
         font-weight: bolder;
         line-height: 1.5rem;
         letter-spacing: 0.3725rem;
+        margin-bottom: 1.15rem;
     }
 
     .card__description {
@@ -147,13 +155,14 @@ button {
         font-style: normal;
         font-weight: 400;
         line-height: 1.25rem;
+        width: 8rem;
+        margin: auto 50%;
+        transform: translateX(-50%);
     }
 }
 
 .productCards {
-
     background-color: #F7F7F7;
-    ;
     padding: 0.5rem 1.2rem;
 
     .productCards__container {
@@ -167,20 +176,31 @@ button {
     .productCards__container__card {
         margin: auto 1.5rem;
         padding: 2rem 0;
-
-    }
-
-    .card__image {
         text-align: center;
-    }
-
-    .image--front {
         position: relative;
     }
 
-    .image--back {
-        position: absolute;
+    .image--front--laptop {
+        position: relative;
+        z-index: 1;
+    }
 
+    .image--front--mobile {
+        position: relative;
+        left: 1.5rem;
+        z-index: 1;
+    }
+
+    .image--back--pink {
+        position: absolute;
+        left: 50%;
+        top: 0px;
+    }
+
+    .image--back--blue {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .card__title {
@@ -191,6 +211,8 @@ button {
         font-weight: 400;
         line-height: normal;
         margin-bottom: 1.2rem;
+        text-align: left;
+        margin-top: 1.6rem;
     }
 
     .card__description {
@@ -200,6 +222,7 @@ button {
         font-style: normal;
         font-weight: 400;
         line-height: 1.3125rem;
+        text-align: left;
     }
 
     .card__container {
@@ -214,8 +237,9 @@ button {
 
     .trumpet {
         position: absolute;
-        bottom: -35px;
-        left: .2rem;
+        left: 50%;
+        top: 2rem;
+        transform: translateX(-50%);
     }
 }
 
