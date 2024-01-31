@@ -302,6 +302,7 @@ button {
   text-align: left;
   padding-left: 1.5rem;
   line-height: 2.7rem;
+  width: 40%;
 }
 .priceCards .feature--image,
 .priceCards .feature--description {
@@ -434,13 +435,13 @@ button {
   width: 100%;
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 485px) {
   .priceCards .priceCards__container {
     margin: 1rem 0rem;
     padding: 1.5rem 5%;
   }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 425px) {
   .priceCards .priceCards__container {
     width: 90%;
   }
