@@ -1,0 +1,144 @@
+.priceCards {
+    text-align: center;
+
+    &__title {
+        margin: 1.5em 0 0 0;
+        color: #000;
+        font-family: Raleway;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__container {
+        position: relative;
+        display: inline-block;
+        width: 85%;
+        margin: 1em 2em;
+        border: 2px solid #FB3B64;
+        border-radius: 25px;
+        padding: 1.5em 10%;
+
+        &__rates,
+        &__features {
+            display: table-cell;
+        }
+
+        &__rates {
+            vertical-align: middle;
+            min-width: 43%;
+
+            h4 {
+                color: #13253B;
+                font-family: Raleway;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.5rem;
+            }
+
+            &__price {
+                font-family: "Open Sans";
+                font-size: 2.875rem;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 4rem;
+            }
+
+            &__text {
+                color: #13253B;
+                font-family: Raleway;
+                font-size: 0.75rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+
+        &__rates__price.pink {
+            color: #FB3B64;
+        }
+
+        +.blue {
+            border-color: #07ACE6;
+        }
+
+        &__rates__price.blue {
+            color: #07ACE6
+        }
+
+        +.green {
+            border-color: #55DFB4;
+        }
+
+        &__rates__price.green {
+            color: #55DFB4
+        }
+
+        &__button {
+            position: absolute;
+            bottom: -1.6em;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 3.125rem;
+            width: 9.375rem;
+            background: #EB476E;
+        }
+
+        &__button.blue {
+            background-color: #07ACE6;
+        }
+
+        &__button.green {
+            background-color: #55DFB4;
+        }
+
+        &__features {
+            text-align: left;
+            padding-left: 1.5em;
+            line-height: 2.7em;
+            width: 40%;
+
+            &__item--image,
+            &__item--description {
+                display: inline-block;
+            }
+
+            &__item--description {
+                color: #000;
+                font-family: "Open Sans";
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 485px) {
+
+    .priceCards {
+
+        &__container {
+            margin: 1em 0rem;
+            padding: 1.5em 5%;
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    .priceCards {
+
+        &__container {
+            width: 90%;
+
+            &__features {
+                padding-left: .5em;
+            }
+        }
+
+    }
+}

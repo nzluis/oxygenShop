@@ -1,0 +1,90 @@
+.contactForm {
+    margin: 3em 1.9em;
+
+    &__title {
+        color: #000;
+        font-family: Raleway;
+        font-size: 2.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__subtitle {
+        color: #000;
+        font-family: "Open Sans";
+        font-size: 0.9rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.375rem;
+        margin-bottom: 2.38rem;
+    }
+
+    &__phoneInfo--icon,
+    &__emailInfo--icon,
+    &__emailInfo--value,
+    &__phoneInfo--value {
+        display: inline-block;
+        vertical-align: middle;
+        color: #A5A5A5;
+        font-family: "Open Sans";
+        font-size: .9rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.375rem;
+    }
+
+    &__form {
+        margin-top: 2.5em;
+
+        &__label {
+            display: block;
+            color: #08A6E4;
+            font-family: "Open Sans";
+            font-size: 0.6875rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 0.205rem;
+        }
+
+        &__email,
+        &__name {
+            width: 100%;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #95989A;
+            margin: 1.8em auto;
+        }
+
+        &__consent {
+            display: inline-flex;
+
+            gap: 0.6rem;
+
+            &__checkbox {
+                align-self: flex-start;
+                border-radius: 0.25rem;
+                border: 1px solid #95989A;
+            }
+
+            &__text {
+                color: #707070;
+                font-family: "Open Sans";
+                font-size: 0.75rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        &__button {
+            display: block;
+            width: 14.125rem;
+            height: 3.5625rem;
+            float: right;
+            margin: 2.06em 0 2.75em 0;
+            box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.29);
+        }
+    }
+}

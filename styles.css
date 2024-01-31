@@ -1,17 +1,29 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-width: 320px;
-}
-
 .navbar {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
-  padding-top: 0.6rem;
+  padding-top: 0.6em;
   position: relative;
+}
+.navbar__container {
+  text-align: justify;
+  margin: 0 1.5em;
+  height: 3em;
+}
+.navbar__container__title, .navbar__container__menu {
+  display: inline-block;
+  vertical-align: middle;
+}
+.navbar__container__title {
+  color: #08A6E4;
+  font-family: Raleway;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 2.3125rem;
+}
+.navbar__container:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 .navbar__list_menu {
   color: #A5A5A5;
@@ -30,90 +42,44 @@ body {
   min-width: 100%;
   height: auto;
   z-index: 1;
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.29);
 }
-.navbar__list_menu li {
-  padding: 0.5em 1.5rem;
-}
-.navbar__list_menu li:active {
-  color: #000;
-}
-
-.navbar__container {
-  text-align: justify;
-  margin: 0rem 1.5rem;
-  height: 3rem;
-}
-
-.navbar__container:after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-}
-
-.navbar__container--title,
-.navbar__container--menu {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.navbar__container--title {
-  color: #08A6E4;
-  font-family: Raleway;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 2.3125rem;
+.navbar__list_menu__item {
+  padding: 0.5em 1.5em;
 }
 
 .intro {
   text-align: center;
   margin: 3.5rem auto 2rem auto;
+  font-style: normal;
 }
-.intro h3 {
+.intro__title {
   color: #000;
-  text-align: center;
   font-family: Raleway;
   font-size: 2.1875rem;
-  font-style: normal;
-  font-weight: 400;
   line-height: normal;
+  font-weight: 400;
 }
-.intro p {
+.intro__text {
   color: #000;
-  text-align: center;
   font-family: "Open Sans";
   font-size: 0.9rem;
-  font-style: normal;
-  font-weight: 400;
   line-height: 1.4375rem;
   margin: 1rem 5rem;
 }
-.intro button {
-  width: 17rem;
-  height: 3.9rem;
+.intro__button {
+  font-weight: 700;
+  width: 17em;
+  height: 3.9em;
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.29);
   padding: 4.19px 19.4px;
 }
 
-button {
-  color: #FFF;
-  text-align: center;
-  font-family: "Open Sans";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.375rem;
-  border: none;
-  border-radius: 2.5rem;
-  background: #08A6E4;
-}
-
-.banner img {
+.banner__image {
   width: 100%;
   object-fit: cover;
 }
-.banner p {
+.banner__text {
   color: #000;
   text-align: center;
   font-family: Raleway;
@@ -127,28 +93,28 @@ button {
 .statsCards {
   text-align: center;
 }
-.statsCards .statsCards--card {
-  margin: 1.56rem 0 3rem 0;
+.statsCards__card {
+  margin: 1.56em 0 3em 0;
 }
-.statsCards .card__image {
+.statsCards__card__image {
   position: relative;
   margin-bottom: 0.8rem;
 }
-.statsCards .card__image .image--person {
+.statsCards__card__image--person {
   position: absolute;
   left: 50%;
 }
-.statsCards .card__image .image--eye {
+.statsCards__card__image--eye {
   position: absolute;
   left: 50%;
   top: 0.8em;
 }
-.statsCards .card__image .image--catalog {
+.statsCards__card__image--catalog {
   position: absolute;
   left: 50%;
   top: 10%;
 }
-.statsCards .card__number {
+.statsCards__card__number {
   color: #000;
   text-align: center;
   font-family: Raleway;
@@ -159,7 +125,7 @@ button {
   letter-spacing: 0.3725rem;
   margin-bottom: 1.15rem;
 }
-.statsCards .card__description {
+.statsCards__card__description {
   color: #A5A5A5;
   text-align: center;
   font-family: Raleway;
@@ -167,59 +133,64 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: 1.25rem;
-  width: 8rem;
+  width: 7em;
   margin: auto 50%;
   transform: translateX(-50%);
 }
 
 .productCards {
   background-color: #F7F7F7;
-  padding: 0.5rem 1.2rem;
+  padding: 0.5em 1.2em;
 }
-.productCards .productCards__container {
+.productCards__container {
   background-color: white;
-  margin: 2.5rem auto;
+  margin: 2.5em auto;
   border-radius: 0.3125rem;
   border: 1px solid #E8E9ED;
   background: #FFF;
 }
-.productCards .productCards__container__card {
+.productCards__container__card {
   margin: auto 1.5rem;
-  padding: 2rem 0;
+  padding: 1.5em 0;
   text-align: center;
   position: relative;
 }
-.productCards .image--front--laptop {
+.productCards__container__card__image--laptop {
   position: relative;
+  top: 2em;
   z-index: 1;
+  margin-bottom: 1.5em;
 }
-.productCards .image--front--mobile {
+.productCards__container__card__image--mobile {
   position: relative;
   left: 1.5rem;
   z-index: 1;
 }
-.productCards .image--back--pink {
+.productCards__container__card__image--pink {
   position: absolute;
   left: 50%;
-  top: 0px;
+  top: 0em;
 }
-.productCards .image--back--blue {
+.productCards__container__card__image--blue {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-.productCards .card__title {
+.productCards__container__card__title {
   color: #000;
   font-family: Raleway;
   font-size: 1.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   text-align: left;
-  margin-top: 1.6rem;
+  margin-top: 0.8em;
 }
-.productCards .card__description {
+.productCards__container__card__title__margin {
+  margin-top: 0em;
+}
+.productCards__container__card__description {
   color: #000;
   font-family: "Open Sans";
   font-size: 0.875rem;
@@ -228,11 +199,11 @@ button {
   line-height: 1.3125rem;
   text-align: left;
 }
-.productCards .card__container {
+.productCards__container__trumpet_container {
   background-color: #55DFB4;
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 13em;
   text-align: center;
   border: 1px solid #E8E9ED;
   border-radius: 0.3125rem;
@@ -247,8 +218,8 @@ button {
 .priceCards {
   text-align: center;
 }
-.priceCards .priceCards__title {
-  margin: 3.3rem 0 0 0;
+.priceCards__title {
+  margin: 1.5em 0 0 0;
   color: #000;
   font-family: Raleway;
   font-size: 2.25rem;
@@ -256,51 +227,23 @@ button {
   font-weight: 400;
   line-height: normal;
 }
-.priceCards .priceCards__container {
+.priceCards__container {
   position: relative;
   display: inline-block;
   width: 85%;
-  margin: 1rem 2rem;
+  margin: 1em 2em;
   border: 2px solid #FB3B64;
   border-radius: 25px;
-  padding: 1.5rem 10%;
+  padding: 1.5em 10%;
 }
-.priceCards .priceCards__container:nth-child(3) {
-  border-color: #07ACE6;
-}
-.priceCards .priceCards__container:nth-child(3) .priceCards__container__leftBox > .leftBox--price {
-  color: #07ACE6;
-}
-.priceCards .priceCards__container:nth-child(4) {
-  border-color: #55DFB4;
-}
-.priceCards .priceCards__container:nth-child(4) .priceCards__container__leftBox > .leftBox--price {
-  color: #55DFB4;
-}
-.priceCards .priceCards__container__button {
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 3.125rem;
-  width: 9.375rem;
-  background: #EB476E;
-}
-.priceCards .priceCards__container__button.blue {
-  background-color: #07ACE6;
-}
-.priceCards .priceCards__container__button.green {
-  background-color: #55DFB4;
-}
-.priceCards .priceCards__container__leftBox,
-.priceCards .priceCards__container__rigthBox {
+.priceCards__container__rates, .priceCards__container__features {
   display: table-cell;
 }
-.priceCards .priceCards__container__leftBox {
+.priceCards__container__rates {
   vertical-align: middle;
   min-width: 43%;
 }
-.priceCards .priceCards__container__leftBox h4 {
+.priceCards__container__rates h4 {
   color: #13253B;
   font-family: Raleway;
   font-size: 1.25rem;
@@ -308,15 +251,14 @@ button {
   font-weight: 700;
   line-height: 1.5rem;
 }
-.priceCards .priceCards__container__leftBox p {
-  color: #FB3B64;
+.priceCards__container__rates__price {
   font-family: "Open Sans";
   font-size: 2.875rem;
   font-style: normal;
   font-weight: 300;
   line-height: 4rem;
 }
-.priceCards .priceCards__container__leftBox .leftBox--text {
+.priceCards__container__rates__text {
   color: #13253B;
   font-family: Raleway;
   font-size: 0.75rem;
@@ -324,17 +266,46 @@ button {
   font-weight: 700;
   line-height: normal;
 }
-.priceCards .priceCards__container__rigthBox {
+.priceCards__container__rates__price.pink {
+  color: #FB3B64;
+}
+.priceCards__container + .blue {
+  border-color: #07ACE6;
+}
+.priceCards__container__rates__price.blue {
+  color: #07ACE6;
+}
+.priceCards__container + .green {
+  border-color: #55DFB4;
+}
+.priceCards__container__rates__price.green {
+  color: #55DFB4;
+}
+.priceCards__container__button {
+  position: absolute;
+  bottom: -1.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3.125rem;
+  width: 9.375rem;
+  background: #EB476E;
+}
+.priceCards__container__button.blue {
+  background-color: #07ACE6;
+}
+.priceCards__container__button.green {
+  background-color: #55DFB4;
+}
+.priceCards__container__features {
   text-align: left;
-  padding-left: 1.5rem;
-  line-height: 2.7rem;
+  padding-left: 1.5em;
+  line-height: 2.7em;
   width: 40%;
 }
-.priceCards .feature--image,
-.priceCards .feature--description {
+.priceCards__container__features__item--image, .priceCards__container__features__item--description {
   display: inline-block;
 }
-.priceCards .feature--description {
+.priceCards__container__features__item--description {
   color: #000;
   font-family: "Open Sans";
   font-size: 0.875rem;
@@ -343,10 +314,24 @@ button {
   line-height: normal;
 }
 
-.contactForm {
-  margin: 3rem 1.9rem;
+@media only screen and (max-width: 485px) {
+  .priceCards__container {
+    margin: 1em 0rem;
+    padding: 1.5em 5%;
+  }
 }
-.contactForm .contactForm__title {
+@media only screen and (max-width: 425px) {
+  .priceCards__container {
+    width: 90%;
+  }
+  .priceCards__container__features {
+    padding-left: 0.5em;
+  }
+}
+.contactForm {
+  margin: 3em 1.9em;
+}
+.contactForm__title {
   color: #000;
   font-family: Raleway;
   font-size: 2.2rem;
@@ -354,7 +339,7 @@ button {
   font-weight: 400;
   line-height: normal;
 }
-.contactForm .contactForm__subtitle {
+.contactForm__subtitle {
   color: #000;
   font-family: "Open Sans";
   font-size: 0.9rem;
@@ -363,9 +348,7 @@ button {
   line-height: 1.375rem;
   margin-bottom: 2.38rem;
 }
-.contactForm img,
-.contactForm .emailInfo--value,
-.contactForm .phoneInfo--value {
+.contactForm__phoneInfo--icon, .contactForm__emailInfo--icon, .contactForm__emailInfo--value, .contactForm__phoneInfo--value {
   display: inline-block;
   vertical-align: middle;
   color: #A5A5A5;
@@ -375,10 +358,10 @@ button {
   font-weight: 600;
   line-height: 1.375rem;
 }
-.contactForm .contactForm__form {
-  margin-top: 2.5rem;
+.contactForm__form {
+  margin-top: 2.5em;
 }
-.contactForm .contactForm__form label {
+.contactForm__form__label {
   display: block;
   color: #08A6E4;
   font-family: "Open Sans";
@@ -388,24 +371,23 @@ button {
   line-height: normal;
   letter-spacing: 0.205rem;
 }
-.contactForm .contactForm__form #email,
-.contactForm .contactForm__form #name {
+.contactForm__form__email, .contactForm__form__name {
   width: 100%;
   outline: none;
   border: none;
   border-bottom: 1px solid #95989A;
-  margin: 1.8rem auto;
+  margin: 1.8em auto;
 }
-.contactForm .contactForm__form .form--consent {
+.contactForm__form__consent {
   display: inline-flex;
   gap: 0.6rem;
 }
-.contactForm .contactForm__form #checkbox {
+.contactForm__form__consent__checkbox {
   align-self: flex-start;
   border-radius: 0.25rem;
   border: 1px solid #95989A;
 }
-.contactForm .contactForm__form .form--consent-text {
+.contactForm__form__consent__text {
   color: #707070;
   font-family: "Open Sans";
   font-size: 0.75rem;
@@ -413,38 +395,35 @@ button {
   font-weight: 400;
   line-height: normal;
 }
-.contactForm .contactForm__form button {
+.contactForm__form__button {
   display: block;
   width: 14.125rem;
   height: 3.5625rem;
   float: right;
-  margin: 2.06rem 0 2.75rem 0;
+  margin: 2.06em 0 2.75em 0;
   box-shadow: 5px 10px 14px 0px rgba(7, 172, 230, 0.29);
 }
 
 .footer {
-  background: #F7F7F7;
+  background: #f7f7f7;
   box-shadow: 0px -5px 40px 0px rgba(0, 0, 0, 0.2);
   clear: both;
   text-align: justify;
-  padding: 0 1.5rem;
+  padding: 0 1.5em;
 }
-.footer h2 {
-  margin-top: 1.4rem;
-}
-.footer .footer__copyright,
-.footer .footer__socialMedia {
+.footer__copyright, .footer__socialMedia {
   display: inline-block;
 }
-.footer .footer__copyright h2 {
+.footer__copyright__title {
   color: #08A6E4;
   font-family: Raleway;
   font-size: 1.625rem;
   font-style: normal;
   font-weight: 300;
   line-height: 1.875rem;
+  margin-top: 1.4rem;
 }
-.footer .footer__copyright p {
+.footer__copyright__subtitle {
   color: #A5A5A5;
   font-family: "Open Sans";
   font-size: 0.6875rem;
@@ -452,33 +431,40 @@ button {
   font-weight: 400;
   line-height: normal;
 }
-.footer .footer__socialMedia > img {
+.footer__socialMedia__facebook, .footer__socialMedia__twitter {
   position: relative;
-  bottom: 8px;
+  bottom: 0.5em;
 }
-.footer .icon--facebook {
+.footer__socialMedia__facebook {
   margin-left: 0.6rem;
 }
-
 .footer:after {
   content: "";
   display: inline-block;
   width: 100%;
 }
 
-@media only screen and (max-width: 485px) {
-  .priceCards .priceCards__container {
-    margin: 1rem 0rem;
-    padding: 1.5rem 5%;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-@media only screen and (max-width: 425px) {
-  .priceCards .priceCards__container {
-    width: 90%;
-  }
-  .priceCards .priceCards__container__rigthBox {
-    padding-left: 0.5rem;
-  }
+
+body {
+  min-width: 320px;
+}
+
+button {
+  color: #FFF;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.375rem;
+  border: none;
+  border-radius: 2.5rem;
+  background: #08A6E4;
 }
 
 /*# sourceMappingURL=styles.css.map */
