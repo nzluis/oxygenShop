@@ -371,10 +371,15 @@ button {
   margin: 1.8rem auto;
 }
 .contactForm .contactForm__form .form--consent {
-  display: inline-block;
+  display: inline-flex;
+  gap: 0.6rem;
+}
+.contactForm .contactForm__form #checkbox {
+  align-self: flex-start;
+  border-radius: 0.25rem;
+  border: 1px solid #95989A;
 }
 .contactForm .contactForm__form .form--consent-text {
-  display: inline-block;
   color: #707070;
   font-family: "Open Sans";
   font-size: 0.75rem;
