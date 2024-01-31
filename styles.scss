@@ -11,6 +11,35 @@ body {
 .navbar {
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
     padding-top: .6rem;
+    position: relative;
+
+    &__list_menu {
+        color: #A5A5A5;
+        font-family: "Open Sans";
+        font-size: 0.6875rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 0.9375rem;
+        letter-spacing: 0.205rem;
+        list-style-type: none;
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 100%;
+        height: auto;
+        z-index: 1;
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
+
+        li {
+            padding: 0.5em 1.5rem;
+        }
+
+        li:active {
+            color: #000;
+        }
+    }
 }
 
 .navbar__container {
@@ -106,25 +135,32 @@ button {
 }
 
 .statsCards {
+    text-align: center;
+
+    .statsCards--card {
+        margin: 1.56rem 0 3rem 0;
+    }
 
     .card__image {
-        text-align: center;
+        position: relative;
+        margin-bottom: 0.8rem;
 
-        // .image--relative {
-        //     position: relative;
-        // }
+        .image--person {
+            position: absolute;
+            left: 50%;
+        }
 
-        // .image--person {
-        //     position: absolute;
-        //     z-index: 1;
-        // }
+        .image--eye {
+            position: absolute;
+            left: 50%;
+            top: 0.8em;
+        }
 
-        // .image--eye {
-        //     position: absolute;
-        //     top: .7rem;
-        //     right: 8.4rem;
-        //     z-index: 1;
-        // }
+        .image--catalog {
+            position: absolute;
+            left: 50%;
+            top: 10%
+        }
 
     }
 
@@ -137,6 +173,7 @@ button {
         font-weight: bolder;
         line-height: 1.5rem;
         letter-spacing: 0.3725rem;
+        margin-bottom: 1.15rem;
     }
 
     .card__description {
@@ -147,13 +184,14 @@ button {
         font-style: normal;
         font-weight: 400;
         line-height: 1.25rem;
+        width: 8rem;
+        margin: auto 50%;
+        transform: translateX(-50%);
     }
 }
 
 .productCards {
-
     background-color: #F7F7F7;
-    ;
     padding: 0.5rem 1.2rem;
 
     .productCards__container {
@@ -167,20 +205,31 @@ button {
     .productCards__container__card {
         margin: auto 1.5rem;
         padding: 2rem 0;
-
-    }
-
-    .card__image {
         text-align: center;
-    }
-
-    .image--front {
         position: relative;
     }
 
-    .image--back {
-        position: absolute;
+    .image--front--laptop {
+        position: relative;
+        z-index: 1;
+    }
 
+    .image--front--mobile {
+        position: relative;
+        left: 1.5rem;
+        z-index: 1;
+    }
+
+    .image--back--pink {
+        position: absolute;
+        left: 50%;
+        top: 0px;
+    }
+
+    .image--back--blue {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .card__title {
@@ -191,6 +240,8 @@ button {
         font-weight: 400;
         line-height: normal;
         margin-bottom: 1.2rem;
+        text-align: left;
+        margin-top: 1.6rem;
     }
 
     .card__description {
@@ -200,6 +251,7 @@ button {
         font-style: normal;
         font-weight: 400;
         line-height: 1.3125rem;
+        text-align: left;
     }
 
     .card__container {
@@ -214,8 +266,9 @@ button {
 
     .trumpet {
         position: absolute;
-        bottom: -35px;
-        left: .2rem;
+        left: 50%;
+        top: 2rem;
+        transform: translateX(-50%);
     }
 }
 
@@ -318,6 +371,8 @@ button {
         text-align: left;
         padding-left: 1.5rem;
         line-height: 2.7rem;
+        width: 40%;
+
     }
 
     .feature--image,
@@ -394,11 +449,17 @@ button {
         }
 
         .form--consent {
-            display: inline-block;
+            display: inline-flex;
+            gap: 0.6rem
+        }
+
+        #checkbox {
+            align-self: flex-start;
+            border-radius: 0.25rem;
+            border: 1px solid #95989A;
         }
 
         .form--consent-text {
-            display: inline-block;
             color: #707070;
             font-family: "Open Sans";
             font-size: 0.75rem;
@@ -472,7 +533,7 @@ button {
     width: 100%;
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 485px) {
 
     .priceCards {
 
@@ -483,7 +544,7 @@ button {
     }
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 425px) {
 
     .priceCards {
 

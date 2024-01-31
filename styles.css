@@ -11,6 +11,32 @@ body {
 .navbar {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
   padding-top: 0.6rem;
+  position: relative;
+}
+.navbar__list_menu {
+  color: #A5A5A5;
+  font-family: "Open Sans";
+  font-size: 0.6875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.9375rem;
+  letter-spacing: 0.205rem;
+  list-style-type: none;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 100%;
+  height: auto;
+  z-index: 1;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
+}
+.navbar__list_menu li {
+  padding: 0.5em 1.5rem;
+}
+.navbar__list_menu li:active {
+  color: #000;
 }
 
 .navbar__container {
@@ -98,8 +124,29 @@ button {
   margin: 0.5rem 2rem;
 }
 
-.statsCards .card__image {
+.statsCards {
   text-align: center;
+}
+.statsCards .statsCards--card {
+  margin: 1.56rem 0 3rem 0;
+}
+.statsCards .card__image {
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+.statsCards .card__image .image--person {
+  position: absolute;
+  left: 50%;
+}
+.statsCards .card__image .image--eye {
+  position: absolute;
+  left: 50%;
+  top: 0.8em;
+}
+.statsCards .card__image .image--catalog {
+  position: absolute;
+  left: 50%;
+  top: 10%;
 }
 .statsCards .card__number {
   color: #000;
@@ -110,6 +157,7 @@ button {
   font-weight: bolder;
   line-height: 1.5rem;
   letter-spacing: 0.3725rem;
+  margin-bottom: 1.15rem;
 }
 .statsCards .card__description {
   color: #A5A5A5;
@@ -119,6 +167,9 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: 1.25rem;
+  width: 8rem;
+  margin: auto 50%;
+  transform: translateX(-50%);
 }
 
 .productCards {
@@ -135,15 +186,27 @@ button {
 .productCards .productCards__container__card {
   margin: auto 1.5rem;
   padding: 2rem 0;
-}
-.productCards .card__image {
   text-align: center;
-}
-.productCards .image--front {
   position: relative;
 }
-.productCards .image--back {
+.productCards .image--front--laptop {
+  position: relative;
+  z-index: 1;
+}
+.productCards .image--front--mobile {
+  position: relative;
+  left: 1.5rem;
+  z-index: 1;
+}
+.productCards .image--back--pink {
   position: absolute;
+  left: 50%;
+  top: 0px;
+}
+.productCards .image--back--blue {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .productCards .card__title {
   color: #000;
@@ -153,6 +216,8 @@ button {
   font-weight: 400;
   line-height: normal;
   margin-bottom: 1.2rem;
+  text-align: left;
+  margin-top: 1.6rem;
 }
 .productCards .card__description {
   color: #000;
@@ -161,6 +226,7 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: 1.3125rem;
+  text-align: left;
 }
 .productCards .card__container {
   background-color: #55DFB4;
@@ -173,8 +239,9 @@ button {
 }
 .productCards .trumpet {
   position: absolute;
-  bottom: -35px;
-  left: 0.2rem;
+  left: 50%;
+  top: 2rem;
+  transform: translateX(-50%);
 }
 
 .priceCards {
@@ -261,6 +328,7 @@ button {
   text-align: left;
   padding-left: 1.5rem;
   line-height: 2.7rem;
+  width: 40%;
 }
 .priceCards .feature--image,
 .priceCards .feature--description {
@@ -329,10 +397,15 @@ button {
   margin: 1.8rem auto;
 }
 .contactForm .contactForm__form .form--consent {
-  display: inline-block;
+  display: inline-flex;
+  gap: 0.6rem;
+}
+.contactForm .contactForm__form #checkbox {
+  align-self: flex-start;
+  border-radius: 0.25rem;
+  border: 1px solid #95989A;
 }
 .contactForm .contactForm__form .form--consent-text {
-  display: inline-block;
   color: #707070;
   font-family: "Open Sans";
   font-size: 0.75rem;
@@ -393,13 +466,13 @@ button {
   width: 100%;
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 485px) {
   .priceCards .priceCards__container {
     margin: 1rem 0rem;
     padding: 1.5rem 5%;
   }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 425px) {
   .priceCards .priceCards__container {
     width: 90%;
   }
