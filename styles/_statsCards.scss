@@ -52,3 +52,12 @@
         }
     }
 }
+
+@media only screen and (min-width: 885px) {
+    .statsCards {
+        display: flex;
+        margin: auto 15%;
+        justify-content: space-evenly;
+        margin-bottom: 5em;
+    }
+}
