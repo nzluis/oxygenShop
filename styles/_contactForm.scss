@@ -89,7 +89,7 @@
     }
 }
 
-@media only screen and (min-width: 885px) {
+@media only screen and (min-width: 1000px) {
     .contactForm {
         display: flex;
         justify-content: space-between;
@@ -112,10 +112,10 @@
     }
 }
 
-@media only screen and (width > 885px) and (width <=980px) {
-    .contactForm {
-        &__contact_info {
-            display: block;
-        }
-    }
-}
+// @media only screen and (width > 885px) and (width <=980px) {
+//     .contactForm {
+//         &__contact_info {
+//             display: block;
+//         }
+//     }
+// }
