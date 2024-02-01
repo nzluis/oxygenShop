@@ -94,6 +94,7 @@
         display: flex;
         justify-content: space-between;
         margin: 5em 25% 0 25%;
+        gap: 2em;
 
         &__title {
             margin-bottom: .4em;
@@ -107,6 +108,14 @@
         &__form {
             width: 50%;
             margin: 0;
+        }
+    }
+}
+
+@media only screen and (width > 885px) and (width <=980px) {
+    .contactForm {
+        &__contact_info {
+            display: block;
         }
     }
 }
