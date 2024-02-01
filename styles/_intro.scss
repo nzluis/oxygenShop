@@ -27,3 +27,21 @@
         padding: 4.19px 19.4px;
     }
 }
+
+@media only screen and (min-width: 885px) {
+    .intro {
+        &__title {
+            padding-top: 1.3em;
+            font-size: 3rem;
+        }
+
+        &__text {
+            font-size: 1rem;
+            padding-bottom: 1em;
+        }
+
+        &__button {
+            margin-bottom: 2em;
+        }
+    }
+}
