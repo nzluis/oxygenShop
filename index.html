@@ -20,11 +20,17 @@
                 alt="menu">
             <!-- <img class="navbar__container__menu" src="./public/imgs/Frame 14.svg" width="20px" height="20px" alt="cancel"> -->
         </div>
-        <ul class="navbar__list_menu">
-            <li class="navbar__list_menu__item">WHY US</li>
-            <li class="navbar__list_menu__item">BENEFITS</li>
-            <li class="navbar__list_menu__item">PRICES</li>
-            <li class="navbar__list_menu__item">CONTACT</li>
+        <ul class="navbar__list__menu--desktop">
+            <li class="navbar__list__menu__link">WHY US</li>
+            <li class="navbar__list__menu__link">BENEFITS</li>
+            <li class="navbar__list__menu__link">PRICES</li>
+            <li class="navbar__list__menu__link">CONTACT</li>
+        </ul>
+        <ul class="navbar__list__menu--mobile">
+            <li class="navbar__list__menu__item">WHY US</li>
+            <li class="navbar__list__menu__item">BENEFITS</li>
+            <li class="navbar__list__menu__item">PRICES</li>
+            <li class="navbar__list__menu__item">CONTACT</li>
         </ul>
     </nav>
 
@@ -70,46 +76,58 @@
 
     <section class="productCards">
         <div class="productCards__container">
-            <div class="productCards__container__card">
-                <img src="./public/imgs/968152a9810c2dd0dfe5197fa1160c1c.png" alt=""
-                    class="productCards__container__card__image--laptop">
-                <img src="./public/imgs/Frame 11.svg" alt="" class="productCards__container__card__image--pink">
-                <h3 class="productCards__container__card__title">Be always first</h3>
-                <p class="productCards__container__card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna
-                    aliqua. Ut enim ad minim veniam.
-                </p>
+            <div class="productCards__container__card one">
+                <div class="productCards__container__card__img_content">
+                    <img src="./public/imgs/968152a9810c2dd0dfe5197fa1160c1c.png" alt=""
+                        class="productCards__container__card__image--laptop">
+                    <img src="./public/imgs/Frame 11.svg" alt="" class="productCards__container__card__image--pink">
+                </div>
+                <div class="productCards__container__card__text_content one">
+                    <h3 class="productCards__container__card__title">Be always first</h3>
+                    <p class="productCards__container__card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
             </div>
         </div>
         <div class="productCards__container">
-            <div class="productCards__container__card">
-                <div class="card__image">
+            <div class="productCards__container__card two">
+                <div class="productCards__container__card__img_content two">
                     <img src="./public/imgs/cfa426ef95f85cfe95fc8ff2cf7795da.png" width="175px" alt=""
                         class="productCards__container__card__image--mobile">
                     <img src="./public/imgs/Ellipse 2.svg" width="125px"
                         class="productCards__container__card__image--blue" alt="">
                 </div>
-                <h3 class="productCards__container__card__title">Your shop is where you are!</h3>
-                <p class="productCards__container__card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna
-                    aliqua. Ut enim ad minim veniam.
-                </p>
+                <div class="productCards__container__card__text_content two">
+                    <h3 class="productCards__container__card__title">Your shop is where you are!</h3>
+                    <p class="productCards__container__card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="productCards__container">
-            <div class="productCards__container__card">
-                <h3 class="productCards__container__card__title productCards__container__card__title__margin">Increase
-                    recognition your brand!</h3>
-                <p class="productCards__container__card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna
-                    aliqua. Ut enim ad minim veniam.
-                </p>
+        <div class="productCards__full_container">
+            <div class="productCards__container last_one">
+                <div class="productCards__container__card three">
+                    <h3 class="productCards__container__card__title productCards__container__card__title__margin">
+                        Increase
+                        recognition your brand!</h3>
+                    <p class="productCards__container__card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
             </div>
             <div class="productCards__container__trumpet_container">
                 <img class="trumpet" src="./public/imgs/b58a61ad9af3bec050306223d00a9ed8.png" alt="">
@@ -119,107 +137,134 @@
 
     <section class="priceCards">
         <h3 class="priceCards__title">Pricing</h3>
-        <div class="priceCards__container">
-            <div class="priceCards__container__rates">
-                <h4>Basic</h4>
-                <p class="priceCards__container__rates__price pink">$0</p>
+        <div class="pricesCards__containers">
+            <div class="priceCards__container pink">
+                <div class="priceCards__container--content">
+                    <div class="priceCards__container__rates">
+                        <h4>Basic</h4>
+                        <p class="priceCards__container__rates__price pink">$0</p>
+                    </div>
+                    <div class="priceCards__container__features">
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">100 MB HDD</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">1 Subdomain</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">2 E-mails</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">Two years license</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">Full support</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="priceCards__container__button">Begin</button>
             </div>
-            <div class="priceCards__container__features">
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">100 MB HDD</p>
+            <div class="priceCards__container blue">
+                <div class="priceCards__container--content">
+                    <div class="priceCards__container__rates">
+                        <h4>Professional</h4>
+                        <p class="priceCards__container__rates__price blue">$25</p>
+                        <p class="priceCards__container__rates__text">Limited offer</p>
+                    </div>
+                    <div class="priceCards__container__features">
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">500 MB HDD</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">2 Subdomain</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">5 E-mails</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">One year license</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">Full support</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">1 Subdomain</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">2 E-mails</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg" alt="">
-                    <p class="priceCards__container__features__item--description">Two years license</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg" alt="">
-                    <p class="priceCards__container__features__item--description">Full support</p>
-                </div>
+                <button class="priceCards__container__button blue">Begin</button>
             </div>
-            <button class="priceCards__container__button">Begin</button>
-        </div>
-        <div class="priceCards__container blue">
-            <div class="priceCards__container__rates">
-                <h4>Professional</h4>
-                <p class="priceCards__container__rates__price blue">$25</p>
-                <p class="priceCards__container__rates__text">Limited offer</p>
+            <div class="priceCards__container green">
+                <div class="priceCards__container--content">
+                    <div class="priceCards__container__rates">
+                        <h4>Premium</h4>
+                        <p class="priceCards__container__rates__price green">$60</p>
+                        <p class="priceCards__container__rates__text">Limited offer</p>
+                    </div>
+                    <div class="priceCards__container__features">
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">2 GB HDD</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">2 Subdomain</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">20 E-mails</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">Two year license</p>
+                        </div>
+                        <div class="priceCards__container__features__item">
+                            <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
+                                alt="">
+                            <p class="priceCards__container__features__item--description">Full support</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="priceCards__container__button green">Begin</button>
             </div>
-            <div class="priceCards__container__features">
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">500 MB HDD</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">2 Subdomain</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">5 E-mails</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">One year license</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg" alt="">
-                    <p class="priceCards__container__features__item--description">Full support</p>
-                </div>
-            </div>
-            <button class="priceCards__container__button blue">Begin</button>
-        </div>
-        <div class="priceCards__container green">
-            <div class="priceCards__container__rates">
-                <h4>Premium</h4>
-                <p class="priceCards__container__rates__price green">$60</p>
-                <p class="priceCards__container__rates__text">Limited offer</p>
-            </div>
-            <div class="priceCards__container__features">
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">2 GB HDD</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">2 Subdomain</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">20 E-mails</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">Two year license</p>
-                </div>
-                <div class="priceCards__container__features__item">
-                    <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg" alt="">
-                    <p class="priceCards__container__features__item--description">Full support</p>
-                </div>
-            </div>
-            <button class="priceCards__container__button green">Begin</button>
         </div>
     </section>
 
     <section class="contactForm">
-        <h2 class="contactForm__title">Any questions?</h2>
-        <p class="contactForm__subtitle">Leave your email address or call us!</p>
-        <div class="contactForm__emailInfo">
-            <img class="contactForm__emailInfo--icon" src="./public/imgs/Mail Icon 2.svg" alt="email icon">
-            <p class="contactForm__emailInfo--value">info@bestshop.xyz</p>
-        </div>
-        <div class="contactForm__phoneInfo">
-            <img class="contactForm__phoneInfo--icon" src="./public/imgs/Phone Icon 2.svg" alt="phone icon">
-            <p class="contactForm__phoneInfo--value">123 456 789</p>
+        <div>
+            <h2 class="contactForm__title">Any questions?</h2>
+            <p class="contactForm__subtitle">Leave your email address or call us!</p>
+            <div class="contactForm__contact_info">
+                <div class="contactForm__emailInfo">
+                    <img class="contactForm__emailInfo--icon" src="./public/imgs/Mail Icon 2.svg" alt="email icon">
+                    <p class="contactForm__emailInfo--value">info@bestshop.xyz</p>
+                </div>
+                <div class="contactForm__phoneInfo">
+                    <img class="contactForm__phoneInfo--icon" src="./public/imgs/Phone Icon 2.svg" alt="phone icon">
+                    <p class="contactForm__phoneInfo--value">123 456 789</p>
+                </div>
+            </div>
         </div>
         <form class="contactForm__form" action="#">
             <label class="contactForm__form__label" for="name">NAME</label>

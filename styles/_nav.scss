@@ -30,7 +30,11 @@
         width: 100%;
     }
 
-    &__list_menu {
+    &__list__menu--desktop {
+        display: none;
+    }
+
+    &__list__menu--mobile {
         color: #A5A5A5;
         font-family: "Open Sans";
         font-size: 0.6875rem;
@@ -43,7 +47,7 @@
         padding-bottom: 1.5rem;
 
         //CAMBIAR A "BLOCK" PARA VISUALIZAR EL MENU
-        display: none;
+        display: block;
         //-----------------------------------------
 
         position: absolute;
@@ -52,9 +56,91 @@
         height: auto;
         z-index: 1;
         box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.29);
+    }
 
+    &__list__menu {
         &__item {
             padding: 0.5em 1.5em;
+        }
+
+        &__item:active {
+            color: black;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+
+        padding: {
+            top: 1.1em;
+            bottom: 1.1em;
+        }
+
+        &__container {
+            text-align: none;
+            margin-left: 8%;
+            height: 100%;
+
+            &__menu {
+                display: none;
+            }
+        }
+
+        &__container::after {
+            content: none;
+        }
+
+        &__list__menu--mobile {
+            display: none;
+        }
+
+        &__list__menu--desktop {
+            display: flex;
+            list-style-type: none;
+            gap: 5em;
+            margin-right: 8%;
+        }
+
+        &__list__menu__link {
+            position: relative;
+            cursor: pointer;
+            color: #A5A5A5;
+            text-align: center;
+            font-family: "Open Sans";
+            font-size: 0.6875rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 0.9375rem;
+            letter-spacing: 0.205rem;
+            transition: all 0.2s;
+            padding: 0.5em;
+            flex-shrink: 0;
+        }
+
+        &__list__menu__link:hover {
+            color: black;
+        }
+
+        &__list__menu__link::after {
+            content: "";
+            height: .3em;
+            width: 100%;
+            background-color: #08A6E4;
+            position: absolute;
+            left: 0;
+            bottom: -2.2em;
+            opacity: 0;
+            transition: all 0.2s;
+        }
+
+        &__list__menu__link:hover::after {
+            opacity: 1;
         }
     }
 }

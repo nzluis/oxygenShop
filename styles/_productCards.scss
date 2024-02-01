@@ -78,10 +78,132 @@
         }
     }
 
+    &__container.last_one {
+        margin-bottom: 0;
+    }
+
     .trumpet {
         position: absolute;
         left: 50%;
         top: 2rem;
         transform: translateX(-50%);
     }
+}
+
+@media only screen and (min-width: 1000px) {
+    .productCards {
+
+        &__container {
+            margin: 2em 20%;
+            padding: 2em 1em;
+
+            &__card {
+                display: flex;
+                align-items: center;
+                min-height: 17em;
+                padding: 0 0 1.5em 0;
+
+                &__description {
+                    font-size: 1.1rem;
+                }
+
+                &__img_content {
+                    width: 50%;
+                    position: relative;
+                    transform: scale(1.5);
+                }
+
+                &__img_content.two {
+                    position: relative;
+                    width: 60%;
+                    right: 4em;
+                    transform: scale(1.6);
+                }
+
+                &__text_content {
+                    width: 50%;
+                }
+
+                &__text_content.one {
+                    position: relative;
+                    bottom: .5em;
+                }
+
+                &__text_content.two {
+                    position: relative;
+                    width: 40%;
+
+                    h3 {
+                        max-width: 60%;
+                    }
+
+                    p {
+                        width: 100%;
+                    }
+                }
+
+                &__text_content.one::after {
+                    background-color: #FB3B64;
+                    bottom: -2.1em;
+                }
+
+                &__text_content.two::after {
+                    background-color: #08A6E4;
+                    bottom: -1.7em;
+                }
+
+                &__image--pink {}
+
+                &__title__margin {
+                    width: 65%;
+                }
+            }
+
+            &__card__text_content::after,
+            &__card.three::after {
+                content: "";
+                height: .3em;
+                width: 16vw;
+                position: absolute;
+                left: 0;
+            }
+
+            &__card.three::after {
+                background-color: #55DFB4;
+                bottom: .5em;
+            }
+
+            &__card.one {
+                flex-direction: row-reverse;
+            }
+
+            &__trumpet_container {
+                width: 50%;
+                height: auto;
+                margin-left: 4em;
+            }
+
+            &__card.three {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+
+        &__container.last_one {
+            margin: 0;
+            width: 60%;
+        }
+
+        &__full_container {
+            display: flex;
+            margin: 2em 20%;
+        }
+
+        .trumpet {
+            top: 6em;
+        }
+    }
+
 }
