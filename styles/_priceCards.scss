@@ -139,6 +139,62 @@
                 padding-left: .5em;
             }
         }
+    }
+}
 
+@media only screen and (min-width: 885px) {
+    .priceCards {
+        padding-bottom: 3em;
+
+        &__title {
+            margin-bottom: 1.7em;
+        }
+
+        &__containers {
+            display: flex;
+        }
+
+        &__container {
+            width: 18%;
+            padding: 2em 0 4.5em 0;
+            transition: all .5s;
+
+            &__rates {
+                &__price {
+                    padding-top: .3em;
+                }
+            }
+
+            &__features {
+                padding-top: 3em;
+                text-align: center;
+                width: 100%;
+                position: relative;
+                left: -1em;
+            }
+        }
+
+        &__container:hover {
+            transform: scale(1.1);
+        }
+
+        &__container.pink:hover {
+            box-shadow: 0px 10px 14px 8px rgb(235, 71, 110, 0.29);
+        }
+
+        &__container.blue:hover {
+            box-shadow: 0px 10px 14px 8px rgb(7, 172, 230, 0.29);
+        }
+
+        &__container.green:hover {
+            box-shadow: 0px 10px 14px 8px rgb(85, 223, 180, 0.29);
+        }
+
+
+        &__container--content {
+            display: flex;
+            flex-direction: column;
+            height: 23em;
+        }
     }
 }
