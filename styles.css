@@ -153,7 +153,7 @@
     padding-bottom: 1em;
   }
   .intro__button {
-    margin-bottom: 2em;
+    min-width: 27em;
   }
 }
 .banner__image {
@@ -171,6 +171,15 @@
   margin: 0.5rem 2rem;
 }
 
+@media only screen and (min-width: 885px) {
+  .banner__image {
+    min-height: 550px;
+  }
+  .banner__text {
+    margin-top: 2em;
+    margin-bottom: 2.5em;
+  }
+}
 .statsCards {
   text-align: center;
 }

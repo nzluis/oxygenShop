@@ -15,3 +15,16 @@
         margin: 0.5rem 2rem
     }
 }
+
+@media only screen and (min-width: 885px) {
+    .banner {
+        &__image {
+            min-height: 550px;
+        }
+
+        &__text {
+            margin-top: 2em;
+            margin-bottom: 2.5em;
+        }
+    }
+}
