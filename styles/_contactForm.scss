@@ -88,3 +88,25 @@
         }
     }
 }
+
+@media only screen and (min-width: 885px) {
+    .contactForm {
+        display: flex;
+        justify-content: space-between;
+        margin: 5em 25% 0 25%;
+
+        &__title {
+            margin-bottom: .4em;
+        }
+
+        &__contact_info {
+            display: flex;
+            gap: 1em;
+        }
+
+        &__form {
+            width: 50%;
+            margin: 0;
+        }
+    }
+}
