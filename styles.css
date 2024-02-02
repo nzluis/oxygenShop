@@ -754,4 +754,11 @@ button {
   cursor: pointer;
 }
 
+.returnTop {
+  position: relative;
+  top: -0.8em;
+  left: 2em;
+  padding: 1em 1em;
+}
+
 /*# sourceMappingURL=styles.css.map */

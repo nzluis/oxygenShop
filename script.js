@@ -50,3 +50,14 @@ function handleScroll() {
 
 //---------------------------------------------------
 
+//////////////////SCROLL %//////////////////
+
+const returnTopButton = document.querySelector('.returnTop')
+
+returnTopButton.addEventListener('click', handleReturnTop)
+
+function handleReturnTop() {
+    document.documentElement.scrollTop = 0
+}
+
+//---------------------------------------------------
