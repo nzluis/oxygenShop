@@ -34,3 +34,18 @@ navbar.addEventListener('click', (e) => {
 })
 
 //---------------------------------------------------
+
+//////////////////SCROLL %//////////////////
+
+window.addEventListener('scroll', handleScroll);
+
+function handleScroll() {
+    const windowScroll = document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;  
+    var scrolled = (windowScroll / height) * 100;
+  
+    document.querySelector(".navbar__scrollBar").style.width = scrolled + "%";
+    console.log(scrolled)
+}
+
+//---------------------------------------------------

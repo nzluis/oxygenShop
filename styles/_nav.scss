@@ -77,6 +77,15 @@
             color: black;
         }
     }
+
+    &__scrollBar {
+        background-color: #07ACE6;
+        height: .6em;
+        width: 0%;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
 }
 
 

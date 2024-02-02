@@ -69,6 +69,14 @@
 .navbar__list__menu__item:active {
   color: black;
 }
+.navbar__scrollBar {
+  background-color: #07ACE6;
+  height: 0.6em;
+  width: 0%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
 
 @media only screen and (min-width: 1000px) {
   .navbar {
