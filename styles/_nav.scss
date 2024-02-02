@@ -22,6 +22,12 @@
             font-weight: 300;
             line-height: 2.3125rem;
         }
+
+        &__menu {
+            &.hidden {
+                display: none;
+            }
+        }
     }
 
     &__container:after {
@@ -47,7 +53,7 @@
         padding-bottom: 1.5rem;
 
         //CAMBIAR A "BLOCK" PARA VISUALIZAR EL MENU
-        display: block;
+        display: none;
         //-----------------------------------------
 
         position: absolute;
@@ -56,6 +62,10 @@
         height: auto;
         z-index: 1;
         box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.29);
+    }
+
+    &__list__menu--mobile.opened {
+        display: block;
     }
 
     &__list__menu {

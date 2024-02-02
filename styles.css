@@ -30,6 +30,9 @@
   font-weight: 300;
   line-height: 2.3125rem;
 }
+.navbar__container__menu.hidden {
+  display: none;
+}
 .navbar__container:after {
   content: "";
   display: inline-block;
@@ -49,13 +52,16 @@
   list-style-type: none;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
-  display: block;
+  display: none;
   position: absolute;
   background-color: white;
   min-width: 100%;
   height: auto;
   z-index: 1;
   box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.29);
+}
+.navbar__list__menu--mobile.opened {
+  display: block;
 }
 .navbar__list__menu__item {
   padding: 0.5em 1.5em;
