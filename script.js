@@ -149,8 +149,43 @@ async function fetchData() {
  } 
 
 //---------------------------------------------------
+
 //////////////////POPUP MODAL//////////////////
+
+// localStorage.setItem('modal_memory', JSON.stringify(true));
+// let oneTime = false
+const modal = document.querySelector(".modal__section")
+setTimeout(() => {
+    modal.classList.add("modal--active")
+},1000)
+
+const modalExit = document.querySelector(".modalExit")
+modalExit.addEventListener( 'click', () => {
+    modal.classList.remove("modal--active")
+    // oneTime = true
+})
+
+document.addEventListener('click', () => {
+    if (Object.values(modal.classList).some(element => element === 'modal--active')) {
+        modal.classList.remove('modal--active')
+    }
+})
+
+const modalContainer = document.querySelector('.modal__section__container')
+modalContainer.addEventListener('click', (e) => {
+    e.stopPropagation()
+})
+
+document.addEventListener('keydown', (e) => {
+    if (Object.values(modal.classList).some(element => element === 'modal--active')) {
+        if (e.key === "Escape") {
+            modal.classList.remove('modal--active')
+        }
+    }
+})
+
 //---------------------------------------------------
+
 //////////////////CURRENCY SELECTOR//////////////////
 //---------------------------------------------------
 //////////////////SLIDER//////////////////
