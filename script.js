@@ -159,10 +159,19 @@ async function fetchData() {
 
 const modal = document.querySelector(".modal__section")
 if (!localStorage.getItem('modal_memory')) {
-    localStorage.setItem('modal_memory', JSON.stringify(true));
     setTimeout(() => {
+        localStorage.setItem('modal_memory', JSON.stringify(true));
         modal.classList.add("modal--active")
-    },1000)
+    },5000)
+    window.addEventListener('scroll', () => {
+        if (!localStorage.getItem('modal_memory')) {
+            if (handleScroll() >= 25) {
+               localStorage.setItem('modal_memory', JSON.stringify(true));
+               modal.classList.add("modal--active")
+           }
+        }
+    });
+
 }
 
 const modalExit = document.querySelector(".modalExit")
