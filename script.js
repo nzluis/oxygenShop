@@ -202,9 +202,9 @@ document.addEventListener('keydown', (e) => {
 
 //////////////////CURRENCY SELECTOR//////////////////
 
-const usd_container = document.querySelector(".usd_container")
-const gbp_container = document.querySelector(".gbp_container")
-const eur_container = document.querySelector(".eur_container")
+const usd_container = document.querySelector(".priceCards__buttonsCurrency__usd_container")
+const gbp_container = document.querySelector(".priceCards__buttonsCurrency__gbp_container")
+const eur_container = document.querySelector(".priceCards__buttonsCurrency__eur_container")
 const currency = document.querySelectorAll(".currency")
 const currencyValue = document.querySelectorAll(".currencyValue")
 

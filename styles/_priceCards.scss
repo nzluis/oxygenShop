@@ -113,6 +113,58 @@
                 line-height: normal;
             }
         }
+
+    }
+
+    &__buttonsCurrency {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #f7f7f7;
+        height: 4em;
+        border-radius: 8em;
+        margin: 5em 10% 0 10%;
+        border: 1px solid black;
+        cursor: pointer;
+
+        &__eur_container {
+            opacity: .8;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            height: 100%;
+            width: 33%;
+        }
+
+        &__usd_container,
+        &__gbp_container {
+            opacity: .8;
+            height: 100%;
+            width: 33%;
+        }
+
+        &__usd_container--usd,
+        &__eur_container--eur,
+        &__gbp_container--gbp {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        &__eur_container:hover,
+        &__usd_container:hover,
+        &__gbp_container:hover {
+            opacity: 1;
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        &__eur_container.selected,
+        &__usd_container.selected,
+        &__gbp_container.selected {
+            opacity: 1;
+            font-weight: bolder;
+        }
     }
 
     &__container--content {
@@ -202,55 +254,4 @@
             height: 23em;
         }
     }
-}
-
-.buttonsCurrency {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f7f7f7;
-    height: 4em;
-    border-radius: 8em;
-    margin: 5em 10% 0 10%;
-    border: 1px solid black;
-    cursor: pointer;
-}
-
-.eur_container {
-    opacity: .8;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    height: 100%;
-    width: 33%;
-}
-
-.usd_container,
-.gbp_container {
-    opacity: .8;
-    height: 100%;
-    width: 33%;
-}
-
-.eur,
-.usd,
-.gbp {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-
-}
-
-.eur_container:hover,
-.usd_container:hover,
-.gbp_container:hover {
-    opacity: 1;
-    font-weight: bolder;
-    font-size: larger;
-}
-
-.eur_container.selected,
-.usd_container.selected,
-.gbp_container.selected {
-    opacity: 1;
-    font-weight: bolder;
 }
