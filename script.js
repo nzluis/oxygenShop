@@ -207,6 +207,7 @@ const gbp_container = document.querySelector(".priceCards__buttonsCurrency__gbp_
 const eur_container = document.querySelector(".priceCards__buttonsCurrency__eur_container")
 const currency = document.querySelectorAll(".currency")
 const currencyValue = document.querySelectorAll(".currencyValue")
+const defaultValues = [0,25,60];
 
 function add_class(container) {
     container.classList.add("selected")
@@ -222,8 +223,8 @@ usd_container.addEventListener('click', () => {
     currency.forEach(spanCurrencyNode => {
         spanCurrencyNode.textContent = "$"
     })
-    currencyValue[1].textContent = 25
-    currencyValue[2].textContent = 60
+    currencyValue[1].textContent = defaultValues[1]
+    currencyValue[2].textContent = defaultValues[2]
 })
 
 eur_container.addEventListener('click', () => {
@@ -233,8 +234,8 @@ eur_container.addEventListener('click', () => {
     currency.forEach(spanCurrencyNode => {
         spanCurrencyNode.textContent = "€"
     })
-    currencyValue.forEach(spanValueNode => {
-        spanValueNode.textContent = Math.floor((spanValueNode.textContent)* usdToEurExchange)
+    currencyValue.forEach((spanValueNode, i) => {
+        spanValueNode.textContent = Math.round(defaultValues[i] * usdToEurExchange)
     })
 })
 
@@ -245,8 +246,8 @@ gbp_container.addEventListener('click', () => {
     currency.forEach(spanCurrencyNode => {
         spanCurrencyNode.textContent = "£"
     })
-    currencyValue.forEach(spanValueNode => {
-        spanValueNode.textContent = Math.floor((spanValueNode.textContent)* usdToGbpExchange)
+    currencyValue.forEach((spanValueNode, i) => {
+        spanValueNode.textContent = Math.round(defaultValues[i]* usdToGbpExchange)
     })
 })
 
