@@ -7,7 +7,6 @@ const buttonCloseMenu = document.querySelector('.close')
 const buttonOpenMenu = document.querySelector('.open')
 
 buttonOpenMenu.addEventListener('click', (e) => {
-    console.log('clicking')
     e.stopPropagation()
     dropDownMenu.classList.toggle('opened')
     buttonCloseMenu.classList.toggle('hidden')
@@ -67,30 +66,6 @@ let email = document.querySelector(".contactForm__form__email")
 const form_name = document.querySelector(".contactForm__form__name")
 const checkbox = document.querySelector(".contactForm__form__consent__checkbox")
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-form.addEventListener('submit', (event) => {
-    const checkboxOk = checkbox.checked
-    const nameOk = form_name.value.length >= 2 && form_name.value.length <= 100
-    const emailOk = emailRegex.test(email.value)
-    event.preventDefault()
-
-    if (!checkboxOk) {
-        checkbox.classList.add("invalid")
-    }
-
-    if (!nameOk) {
-        form_name.classList.add("input-invalid")
-    }
-
-    if (!emailOk){
-        email.classList.add("input-invalid")
-    } else {
-        email.classList.remove("input-invalid")
-    }
-
-    if (checkboxOk && nameOk && emailOk) {
-        fetchData()
-    }
-})
 
 form_name.addEventListener('input', () => {
 
@@ -124,6 +99,30 @@ email.addEventListener('input', () => {
         email.classList.add("input-invalid")
     }
 })
+
+form.addEventListener('submit', (event) => {
+    const checkboxOk = checkbox.checked
+    const nameOk = form_name.value.length >= 2 && form_name.value.length <= 100
+    const emailOk = emailRegex.test(email.value)
+    event.preventDefault()
+
+    if (!checkboxOk) {
+        checkbox.classList.add("invalid")
+    }
+
+    if (!nameOk) {
+        form_name.classList.add("input-invalid")
+    }
+
+    if (!emailOk){
+        email.classList.add("input-invalid")
+    }
+
+    if (checkboxOk && nameOk && emailOk) {
+        fetchData()
+    }
+})
+
 //---------------------------------------------------
 
 //////////////////FETCH JSON//////////////////
@@ -141,7 +140,6 @@ async function fetchData() {
             'Content-type': 'application/json; charset=UTF-8',
         },
         })
-        console.log(response)
         const data = await response.json()
         alert(`Form successfully completed for ${data.name} and email account: ${data.email}`)
         form.reset()
