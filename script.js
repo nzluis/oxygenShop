@@ -152,17 +152,17 @@ async function fetchData() {
 
 //////////////////POPUP MODAL//////////////////
 
-// localStorage.setItem('modal_memory', JSON.stringify(true));
-// let oneTime = false
 const modal = document.querySelector(".modal__section")
-setTimeout(() => {
-    modal.classList.add("modal--active")
-},1000)
+if (!localStorage.getItem('modal_memory')) {
+    localStorage.setItem('modal_memory', JSON.stringify(true));
+    setTimeout(() => {
+        modal.classList.add("modal--active")
+    },1000)
+}
 
 const modalExit = document.querySelector(".modalExit")
 modalExit.addEventListener( 'click', () => {
     modal.classList.remove("modal--active")
-    // oneTime = true
 })
 
 document.addEventListener('click', () => {
