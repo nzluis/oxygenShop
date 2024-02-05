@@ -201,6 +201,68 @@ document.addEventListener('keydown', (e) => {
 //---------------------------------------------------
 
 //////////////////CURRENCY SELECTOR//////////////////
+
+const usd_container = document.querySelector(".usd_container")
+const gbp_container = document.querySelector(".gbp_container")
+const eur_container = document.querySelector(".eur_container")
+const currency = document.querySelectorAll(".currency")
+const currencyValue = document.querySelectorAll(".currencyValue")
+
+function add_class(container) {
+    container.classList.add("selected")
+}
+function remove_class(container) {
+    container.classList.remove("selected")
+}
+
+usd_container.addEventListener('click', () => {
+    add_class(usd_container)
+    remove_class(eur_container)
+    remove_class(gbp_container)
+    currency.forEach(spanCurrencyNode => {
+        spanCurrencyNode.textContent = "$"
+    })
+    currencyValue[1].textContent = 25
+    currencyValue[2].textContent = 60
+})
+
+eur_container.addEventListener('click', () => {
+    add_class(eur_container)
+    remove_class(usd_container)
+    remove_class(gbp_container)
+    currency.forEach(spanCurrencyNode => {
+        spanCurrencyNode.textContent = "€"
+    })
+    currencyValue.forEach(spanValueNode => {
+        spanValueNode.textContent = Math.floor((spanValueNode.textContent)* usdToEurExchange)
+    })
+})
+
+gbp_container.addEventListener('click', () => {
+    add_class(gbp_container)
+    remove_class(eur_container)
+    remove_class(usd_container)
+    currency.forEach(spanCurrencyNode => {
+        spanCurrencyNode.textContent = "£"
+    })
+    currencyValue.forEach(spanValueNode => {
+        spanValueNode.textContent = Math.floor((spanValueNode.textContent)* usdToGbpExchange)
+    })
+})
+
+async function fetchCurrency() {
+    const response = await fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json", {
+        method: 'GET',
+    })
+    const data = await response.json()
+    return data.usd
+}
+let usdToEurExchange
+let usdToGbpExchange
+fetchCurrency().then((data) => usdToEurExchange = data.eur)
+fetchCurrency().then((data) => usdToGbpExchange = data.gbp)
+
 //---------------------------------------------------
+
 //////////////////SLIDER//////////////////
 //---------------------------------------------------
