@@ -123,6 +123,10 @@ form.addEventListener('submit', (event) => {
     }
 })
 
+document.addEventListener("DOMContentLoaded", function() {
+    form.reset()
+});
+
 //---------------------------------------------------
 
 //////////////////FETCH JSON//////////////////
