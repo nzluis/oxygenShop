@@ -68,23 +68,27 @@ const form_name = document.querySelector(".contactForm__form__name")
 const checkbox = document.querySelector(".contactForm__form__consent__checkbox")
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 form.addEventListener('submit', (event) => {
-    
-    if (!checkbox.checked) {
+    const checkboxOk = checkbox.checked
+    const nameOk = form_name.value.length >= 2 && form_name.value.length <= 100
+    const emailOk = emailRegex.test(email.value)
+    event.preventDefault()
+
+    if (!checkboxOk) {
         checkbox.classList.add("invalid")
-        event.preventDefault()
     }
 
-    if (form_name.value.length < 2 || form_name.value.length > 100) {
+    if (!nameOk) {
         form_name.classList.add("input-invalid")
-        event.preventDefault()
     }
 
-    if (!emailRegex.test(email.value) ){
-        console.log(emailRegex.test(email.value))
+    if (!emailOk){
         email.classList.add("input-invalid")
-        event.preventDefault()
     } else {
         email.classList.remove("input-invalid")
+    }
+
+    if (checkboxOk && nameOk && emailOk) {
+        fetchData()
     }
 })
 
@@ -111,7 +115,7 @@ checkbox.addEventListener("input", () => {
 });
 
 email.addEventListener('input', () => {
-    
+
     if(emailRegex.test(email.value)) {
         email.setCustomValidity("");
         email.classList.remove("input-invalid")
@@ -123,6 +127,29 @@ email.addEventListener('input', () => {
 //---------------------------------------------------
 
 //////////////////FETCH JSON//////////////////
+
+async function fetchData() {
+    try {  
+        const response = await fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'POST',
+        body: JSON.stringify({
+            name: form_name.value,
+            email: email.value,
+            consent: checkbox.checked,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        })
+        console.log(response)
+        const data = await response.json()
+        alert(`Form successfully completed for ${data.name} and email account: ${data.email}`)
+        form.reset()
+    } catch (error) {
+            console.log(error.message)
+    }
+ } 
+
 //---------------------------------------------------
 //////////////////POPUP MODAL//////////////////
 //---------------------------------------------------
