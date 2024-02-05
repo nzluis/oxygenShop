@@ -36,14 +36,15 @@ navbar.addEventListener('click', (e) => {
 
 //////////////////SCROLL %//////////////////
 
-window.addEventListener('scroll', handleScroll);
+window.addEventListener('scroll', () => {
+    document.querySelector(".navbar__scrollBar").style.width = handleScroll() + "%";
+});
 
 function handleScroll() {
     const windowScroll = document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;  
     const scrolled = (windowScroll / height) * 100;
-  
-    document.querySelector(".navbar__scrollBar").style.width = scrolled + "%";
+    return scrolled
 }
 
 //---------------------------------------------------
