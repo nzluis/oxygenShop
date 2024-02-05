@@ -203,3 +203,54 @@
         }
     }
 }
+
+.buttonsCurrency {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f7f7f7;
+    height: 4em;
+    border-radius: 8em;
+    margin: 5em 10% 0 10%;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.eur_container {
+    opacity: .8;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    height: 100%;
+    width: 33%;
+}
+
+.usd_container,
+.gbp_container {
+    opacity: .8;
+    height: 100%;
+    width: 33%;
+}
+
+.eur,
+.usd,
+.gbp {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.eur_container:hover,
+.usd_container:hover,
+.gbp_container:hover {
+    opacity: 1;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.eur_container.selected,
+.usd_container.selected,
+.gbp_container.selected {
+    opacity: 1;
+    font-weight: bolder;
+}
