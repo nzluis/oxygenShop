@@ -639,6 +639,14 @@
   border: none;
   border-bottom: 1px solid #95989A;
   margin: 1.8em auto;
+  padding: 0.8em;
+}
+.contactForm__form .input-invalid {
+  border: 1px solid red;
+  border-radius: 6px;
+}
+.contactForm__form__consent__checkbox.invalid {
+  outline: 2px solid red;
 }
 .contactForm__form__consent {
   display: inline-flex;
