@@ -266,4 +266,48 @@ fetchCurrency().then((data) => usdToGbpExchange = data.gbp)
 //---------------------------------------------------
 
 //////////////////SLIDER//////////////////
+
+slides = document.querySelectorAll(`.slider__container__slide`)
+
+class Slider {
+    id
+    
+    constructor(id) {
+        this.id = id
+    }
+    
+    currentSlide = 0;
+    maxSlide = slides.length - 1;
+
+    slidePosition = () => {
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(${100 * (index - this.currentSlide)}%)`;
+        });
+    }
+
+    nextSlide = () => {
+        this.currentSlide === this.maxSlide ? this.currentSlide = 0 : this.currentSlide++
+    } 
+
+    previousSlide = () => {
+        this.currentSlide === 0 ? this.currentSlide = this.maxSlide : this.currentSlide--
+    }
+
+}
+
+const slider = new Slider("slider")
+slider.slidePosition()
+
+const nextButton = document.querySelector('.slider__container__next')
+const prevButton = document.querySelector('.slider__container__prev')
+
+nextButton.addEventListener('click', () => {
+    slider.nextSlide()
+    slider.slidePosition()
+})
+
+prevButton.addEventListener('click', () => {
+    slider.previousSlide()
+    slider.slidePosition()
+})
 //---------------------------------------------------
