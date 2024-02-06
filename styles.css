@@ -1,13 +1,3 @@
-/*
-
-    EJERCICIOS GITHUB
-
-    FUNCIONO A LA PRIMERA!!!
-
-    EL CAMBIO SERA ESCRIBIR OTRO TITULO
-
-
-*/
 .navbar {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.29);
   padding-top: 0.6em;
@@ -629,6 +619,47 @@
     margin-top: 5em;
   }
 }
+.slider {
+  margin: 5% auto 9% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider__container {
+  width: 100%;
+  max-width: 640px;
+  height: 460px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: black;
+}
+.slider__container__slide {
+  width: 100%;
+  max-width: 640px;
+  height: 350px;
+  position: absolute;
+  top: 12%;
+  transition: all 0.5s;
+}
+.slider__container__prev, .slider__container__next {
+  color: white;
+  position: absolute;
+  top: 45%;
+  padding: 0.5em;
+  border-radius: 10em;
+  cursor: pointer;
+}
+.slider__container__prev {
+  left: 0.5em;
+}
+.slider__container__next {
+  right: 0.5em;
+}
+.slider__container__prev:hover, .slider__container__next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .contactForm {
   margin: 3em 1.9em;
 }
