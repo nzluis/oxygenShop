@@ -75,6 +75,7 @@
             text-align: center;
             border: 1px solid #E8E9ED;
             border-radius: 0.3125rem;
+            margin-bottom: 3em;
         }
     }
 
@@ -94,7 +95,7 @@
     .productCards {
 
         &__container {
-            margin: 2em 20%;
+            margin: 5em 10%;
             padding: 2em 1em;
 
             &__card {
@@ -181,6 +182,7 @@
                 width: 50%;
                 height: auto;
                 margin-left: 4em;
+                margin-bottom: 0;
             }
 
             &__card.three {
@@ -198,7 +200,7 @@
 
         &__full_container {
             display: flex;
-            margin: 2em 20%;
+            margin: 2em 10% 5em 10%;
         }
 
         .trumpet {
