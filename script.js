@@ -1,5 +1,3 @@
-console.log('working')
-
 //////////////////NAVBAR - DROPDOWN//////////////////
 
 const dropDownMenu = document.querySelector('.navbar__list__menu--mobile')
@@ -267,14 +265,14 @@ fetchCurrency().then((data) => usdToGbpExchange = data.gbp)
 
 //////////////////SLIDER//////////////////
 
-slides = document.querySelectorAll(`.slider__container__slide`)
+const slides = document.querySelectorAll(`.slider__container__slide`)
+const dots = document.querySelectorAll('.slider__container__dots__dot')
 
 class Slider {
-    id
-    
-    constructor(id) {
-        this.id = id
-    }
+    // id
+    // constructor(id) {
+    //     this.id = id
+    // }
     
     currentSlide = 0;
     maxSlide = slides.length - 1;
@@ -292,11 +290,25 @@ class Slider {
     previousSlide = () => {
         this.currentSlide === 0 ? this.currentSlide = this.maxSlide : this.currentSlide--
     }
+    
+    updateDots = () => {
+        dots.forEach( (dot, index) => {
+            index === this.currentSlide ? dot.classList.add('selected') : dot.classList.remove('selected')
+        })
+    }
+
+    setAutomatic = () =>  setTimeout(() => {
+        this.nextSlide()
+        this.slidePosition()
+        this.updateDots()
+        this.setAutomatic()
+    },5000)
 
 }
 
 const slider = new Slider("slider")
 slider.slidePosition()
+slider.setAutomatic()
 
 const nextButton = document.querySelector('.slider__container__next')
 const prevButton = document.querySelector('.slider__container__prev')
@@ -304,10 +316,12 @@ const prevButton = document.querySelector('.slider__container__prev')
 nextButton.addEventListener('click', () => {
     slider.nextSlide()
     slider.slidePosition()
+    slider.updateDots()
 })
 
 prevButton.addEventListener('click', () => {
     slider.previousSlide()
     slider.slidePosition()
+    slider.updateDots()
 })
 //---------------------------------------------------

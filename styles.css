@@ -659,7 +659,36 @@
 .slider__container__prev:hover, .slider__container__next:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
+.slider__container__dots {
+  position: absolute;
+  bottom: 0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slider__container__dots__dot {
+  margin: auto 0.1em auto 0.1em;
+  width: 0.8em;
+  cursor: pointer;
+  padding: 0.1em;
+}
+.slider__container__dots__dot:hover {
+  transform: scale(1.5);
+}
+.slider__container__dots__dot.selected {
+  transform: scale(1.5);
+}
 
+@media only screen and (max-width: 790px) {
+  .slider__container {
+    margin-top: 2.5em;
+    max-width: 85%;
+    max-height: 350px;
+  }
+  .slider__container__slide {
+    max-height: 240px;
+    top: 15%;
+  }
+}
 .contactForm {
   margin: 3em 1.9em;
 }
