@@ -39,8 +39,16 @@
             left: 50%;
             transform: translateX(-50%);
 
-            &+input {
-                width: 10%;
+            .modal_email--input {
+                margin-left: 1em;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+            }
+
+            .input-invalid {
+                border: 1px solid red;
+                border-radius: 6px;
             }
         }
     }

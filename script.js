@@ -33,6 +33,7 @@ navbar.addEventListener('click', (e) => {
 //---------------------------------------------------
 
 //////////////////SCROLL %//////////////////
+
 const scroll_bar = document.querySelector(".navbar__scrollBar")
 
 window.addEventListener('scroll', () => {
@@ -89,15 +90,18 @@ checkbox.addEventListener("input", () => {
     }
 });
 
-email.addEventListener('input', () => {
-
-    if(emailRegex.test(email.value)) {
-        email.setCustomValidity("");
-        email.classList.remove("input-invalid")
+function emailValidation(emailNode, test) {
+    if(test.test(emailNode.value)) {
+        emailNode.setCustomValidity("");
+        emailNode.classList.remove("input-invalid")
     } else {
-        email.setCustomValidity("A proper email name, please");
-        email.classList.add("input-invalid")
+        emailNode.setCustomValidity("A proper email name, please");
+        emailNode.classList.add("input-invalid")
     }
+}
+
+email.addEventListener('input', () => {
+    emailValidation(email, emailRegex)
 })
 
 form.addEventListener('submit', (event) => {
@@ -119,7 +123,8 @@ form.addEventListener('submit', (event) => {
     }
 
     if (checkboxOk && nameOk && emailOk) {
-        fetchData()
+        fetchData(email, form_name, checkbox)
+        form.reset()
     }
 })
 
@@ -131,22 +136,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //////////////////FETCH JSON//////////////////
 
-async function fetchData() {
+async function fetchData(emailNode, nameNode, checkboxNode) {
     try {  
-        const response = await fetch('https://jsonplaceholder.typicode.com/users', {
-        method: 'POST',
-        body: JSON.stringify({
-            name: form_name.value,
-            email: email.value,
-            consent: checkbox.checked,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-        })
+        let response = {}
+        if (emailNode && !nameNode) {
+            response = await fetch('https://jsonplaceholder.typicode.com/users', {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: emailNode.value,
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                })
+        }
+        if (emailNode && nameNode && checkboxNode) {
+            response = await fetch('https://jsonplaceholder.typicode.com/users', {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: emailNode.value,
+                    name: nameNode.value,
+                    consent: checkboxNode.checked,
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+        }
+        
         const data = await response.json()
-        alert(`Form successfully completed for ${data.name} and email account: ${data.email}`)
-        form.reset()
+        if (data.name && data.email )alert(`Form successfully completed for ${data.name} and email account: ${data.email}`)
+        if (data.email && !data.name)alert(`Successfully joined our newsletter ${data.email}`)
     } catch (error) {
             console.log(error.message)
     }
@@ -157,14 +177,16 @@ async function fetchData() {
 //////////////////POPUP MODAL//////////////////
 
 const modal = document.querySelector(".modal__section")
+
 if (!localStorage.getItem('modal_memory')) {
-    setTimeout(() => {
+    timer = setTimeout(() => {
         localStorage.setItem('modal_memory', JSON.stringify(true));
         modal.classList.add("modal--active")
     },5000)
     window.addEventListener('scroll', () => {
         if (!localStorage.getItem('modal_memory')) {
             if (handleScroll() >= 25) {
+                clearTimeout(timer)
                localStorage.setItem('modal_memory', JSON.stringify(true));
                modal.classList.add("modal--active")
            }
@@ -174,21 +196,21 @@ if (!localStorage.getItem('modal_memory')) {
 }
 
 const modalExit = document.querySelector(".modalExit")
+// If press X button
 modalExit.addEventListener( 'click', () => {
     modal.classList.remove("modal--active")
 })
-
+//If click outside modal
 document.addEventListener('click', () => {
     if (Object.values(modal.classList).some(element => element === 'modal--active')) {
         modal.classList.remove('modal--active')
     }
 })
-
 const modalContainer = document.querySelector('.modal__section__container')
 modalContainer.addEventListener('click', (e) => {
     e.stopPropagation()
 })
-
+//If press Esc
 document.addEventListener('keydown', (e) => {
     if (Object.values(modal.classList).some(element => element === 'modal--active')) {
         if (e.key === "Escape") {
@@ -196,6 +218,30 @@ document.addEventListener('keydown', (e) => {
         }
     }
 })
+
+const modal_email = document.querySelector(".modal_email--input")
+const newsletter = document.querySelector(".modal__section__container__content--form")
+
+modal_email.addEventListener('input', () => {
+    emailValidation(modal_email, emailRegex)
+})
+
+newsletter.addEventListener('submit', (event) => {
+    const emailOk = emailRegex.test(modal_email.value)
+    event.preventDefault()
+
+    if (!emailOk){
+        modal_email.classList.add("input-invalid")
+    } else {
+        fetchData(modal_email)
+        newsletter.reset()
+        modal.style.display = 'none'
+    }
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+    newsletter.reset()
+});
 
 //---------------------------------------------------
 

@@ -877,8 +877,15 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.modal__section__container__content--form + input {
-  width: 10%;
+.modal__section__container__content--form .modal_email--input {
+  margin-left: 1em;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+.modal__section__container__content--form .input-invalid {
+  border: 1px solid red;
+  border-radius: 6px;
 }
 
 .modalExit {
