@@ -192,7 +192,6 @@ if (!localStorage.getItem('modal_memory')) {
            }
         }
     });
-
 }
 
 const modalExit = document.querySelector(".modalExit")
