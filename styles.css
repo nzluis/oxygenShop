@@ -389,7 +389,7 @@
   }
   .productCards__container__card__text_content.two::after {
     background-color: #08A6E4;
-    bottom: -1.7em;
+    bottom: -2em;
   }
   .productCards__container__card__title__margin {
     width: 65%;
@@ -403,7 +403,7 @@
   }
   .productCards__container__card.three::after {
     background-color: #55DFB4;
-    bottom: 0.5em;
+    bottom: 2.1em;
   }
   .productCards__container__card.one {
     flex-direction: row-reverse;
@@ -860,7 +860,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(15px);
   z-index: 10;
-  display: none;
+  display: block;
   transition: display 0.1s;
   color: #000;
   font-family: Raleway;
@@ -878,28 +878,53 @@
   border-radius: 2em;
   padding-bottom: 16em;
 }
-.modal__section__container__content {
+.modal__section__container__title {
   position: absolute;
   top: 25%;
   left: 50%;
   transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
 }
 .modal__section__container__content--form {
   display: block;
   position: absolute;
+  width: 90%;
+  text-align: center;
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
 }
+.modal__section__container__content--form .modal_email--label {
+  color: #08A6E4;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.205rem;
+}
 .modal__section__container__content--form .modal_email--input {
   margin-left: 1em;
+  width: 60%;
   border: none;
-  border-bottom: 1px solid black;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
   outline: none;
+  font-family: Raleway;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 1em;
+  border-radius: 6px;
 }
+.modal__section__container__content--form .modal_email--input:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+.modal__section__container__content--form .modal_email--input:focus {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+.modal__section__container__content--form .modal_email--input:hover.input-invalid,
+.modal__section__container__content--form .modal_email--input:focus.input-invalid,
 .modal__section__container__content--form .input-invalid {
   border: 1px solid red;
-  border-radius: 6px;
 }
 
 .modalExit {
@@ -923,6 +948,21 @@
   transform: translateX(-50%);
 }
 
+@media only screen and (max-width: 800px) {
+  .modal__section__container {
+    width: 80%;
+    left: 10%;
+  }
+  .modal__section__container__title {
+    width: 80%;
+  }
+  .modal__section__container__content--form .modal_email--label {
+    display: block;
+  }
+  .modal__section__container__content--form .modal_email--input {
+    width: 80%;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
