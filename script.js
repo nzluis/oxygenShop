@@ -371,4 +371,12 @@ prevButton.addEventListener('click', () => {
     slider.slidePosition()
     slider.updateDots()
 })
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        slider.currentSlide = index
+        slider.slidePosition()
+        slider.updateDots()
+    })
+})
 //---------------------------------------------------
