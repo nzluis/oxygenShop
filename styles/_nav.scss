@@ -27,6 +27,16 @@
             &.hidden {
                 display: none;
             }
+
+            &.open {
+                width: 20px;
+                height: 20px
+            }
+
+            &.close {
+                width: 20px;
+                height: 20px
+            }
         }
     }
 

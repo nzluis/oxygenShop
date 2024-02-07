@@ -23,6 +23,14 @@
 .navbar__container__menu.hidden {
   display: none;
 }
+.navbar__container__menu.open {
+  width: 20px;
+  height: 20px;
+}
+.navbar__container__menu.close {
+  width: 20px;
+  height: 20px;
+}
 .navbar__container:after {
   content: "";
   display: inline-block;
@@ -171,6 +179,7 @@
   }
 }
 .banner__image {
+  height: 227px;
   width: 100%;
   object-fit: cover;
 }
@@ -284,6 +293,7 @@
   top: 0em;
 }
 .productCards__container__card__image--blue {
+  width: 125px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -443,6 +453,9 @@
   border-radius: 25px;
   padding: 1.5em 10%;
 }
+.priceCards__container.pink {
+  margin-top: 1em;
+}
 .priceCards__container__rates, .priceCards__container__features {
   display: table-cell;
 }
@@ -564,8 +577,8 @@
 
 @media only screen and (max-width: 485px) {
   .priceCards__container {
-    margin: 1em 0rem;
-    padding: 1.5em 5%;
+    margin: 2em 0rem;
+    padding: 0.5em 5% 1.5em 5%;
   }
 }
 @media only screen and (max-width: 425px) {
@@ -578,6 +591,7 @@
     padding-bottom: 3em;
   }
   .priceCards__title {
+    margin-top: 3.5em;
     margin-bottom: 1em;
   }
   .priceCards__containers {

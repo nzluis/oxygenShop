@@ -20,6 +20,10 @@
         border-radius: 25px;
         padding: 1.5em 10%;
 
+        &.pink {
+            margin-top: 1em;
+        }
+
         &__rates,
         &__features {
             display: table-cell;
@@ -179,8 +183,8 @@
     .priceCards {
 
         &__container {
-            margin: 1em 0rem;
-            padding: 1.5em 5%;
+            margin: 2em 0rem;
+            padding: .5em 5% 1.5em 5%;
         }
     }
 }
@@ -203,6 +207,7 @@
         padding-bottom: 3em;
 
         &__title {
+            margin-top: 3.5em;
             margin-bottom: 1em;
         }
 
