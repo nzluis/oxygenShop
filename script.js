@@ -33,9 +33,10 @@ navbar.addEventListener('click', (e) => {
 //---------------------------------------------------
 
 //////////////////SCROLL %//////////////////
+const scroll_bar = document.querySelector(".navbar__scrollBar")
 
 window.addEventListener('scroll', () => {
-    document.querySelector(".navbar__scrollBar").style.width = handleScroll() + "%";
+    scroll_bar.style.width = handleScroll() + "%";
 });
 
 function handleScroll() {
