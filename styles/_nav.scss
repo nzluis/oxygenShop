@@ -22,6 +22,22 @@
             font-weight: 300;
             line-height: 2.3125rem;
         }
+
+        &__menu {
+            &.hidden {
+                display: none;
+            }
+
+            &.open {
+                width: 20px;
+                height: 20px
+            }
+
+            &.close {
+                width: 20px;
+                height: 20px
+            }
+        }
     }
 
     &__container:after {
@@ -47,7 +63,7 @@
         padding-bottom: 1.5rem;
 
         //CAMBIAR A "BLOCK" PARA VISUALIZAR EL MENU
-        display: block;
+        display: none;
         //-----------------------------------------
 
         position: absolute;
@@ -58,6 +74,10 @@
         box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.29);
     }
 
+    &__list__menu--mobile.opened {
+        display: block;
+    }
+
     &__list__menu {
         &__item {
             padding: 0.5em 1.5em;
@@ -66,6 +86,15 @@
         &__item:active {
             color: black;
         }
+    }
+
+    &__scrollBar {
+        background-color: #07ACE6;
+        height: .6em;
+        width: 0%;
+        position: fixed;
+        top: 0;
+        z-index: 1;
     }
 }
 

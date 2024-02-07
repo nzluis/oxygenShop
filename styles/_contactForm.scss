@@ -55,6 +55,16 @@
             border: none;
             border-bottom: 1px solid #95989A;
             margin: 1.8em auto;
+            padding: .8em;
+        }
+
+        .input-invalid {
+            border: 1px solid red;
+            border-radius: 6px;
+        }
+
+        &__consent__checkbox.invalid {
+            outline: 2px solid red;
         }
 
         &__consent {
@@ -93,7 +103,7 @@
     .contactForm {
         display: flex;
         justify-content: space-between;
-        margin: 5em 25% 0 25%;
+        margin: 5em 18% 0 18%;
         gap: 2em;
 
         &__title {
@@ -111,11 +121,3 @@
         }
     }
 }
-
-// @media only screen and (width > 885px) and (width <=980px) {
-//     .contactForm {
-//         &__contact_info {
-//             display: block;
-//         }
-//     }
-// }

@@ -13,12 +13,24 @@
 </head>
 
 <body>
+    <section class="modal__section">
+        <div class="modal__section__container">
+            <div class="modal__section__container__title">Suscribe to our newsletter</div>
+            <form class="modal__section__container__content--form" action="/">
+                <label for="modal_email--input" class="modal_email--label">Email</label>
+                <input type="text" name="modal_email" class="modal_email--input">
+
+                <button class="modal_submit">Join</button>
+            </form>
+            <a class="modalExit"><img src="./public/imgs/Frame 14.svg" alt="close modal"></a>
+        </div>
+    </section>
     <nav class="navbar">
+        <div class="navbar__scrollBar"></div>
         <div class="navbar__container">
             <h1 class="navbar__container__title">OXYGENShop</h1>
-            <img class="navbar__container__menu" src="./public/imgs/icons8-menu-50.png" width="20px" height="20px"
-                alt="menu">
-            <!-- <img class="navbar__container__menu" src="./public/imgs/Frame 14.svg" width="20px" height="20px" alt="cancel"> -->
+            <img class="navbar__container__menu open" src="./public/imgs/icons8-menu-50.png" alt="menu" />
+            <img class="navbar__container__menu close hidden" src="./public/imgs/Frame 14.svg" alt="cancel" />
         </div>
         <ul class="navbar__list__menu--desktop">
             <li class="navbar__list__menu__link">WHY US</li>
@@ -41,8 +53,7 @@
     </section>
 
     <section class="banner">
-        <img class="banner__image" src="./public/imgs/6648411f57f04aff84de5d247f55d2a8.png" width="779px" height="227px"
-            alt="laptop">
+        <img class="banner__image" src="./public/imgs/6648411f57f04aff84de5d247f55d2a8.png" alt="laptop" />
         <p class="banner__text">The most popular sales platform in country</p>
     </section>
 
@@ -50,24 +61,24 @@
         <article class="statsCards__card">
             <div class="statsCards__card__image">
                 <img class="statsCards__card__image--ellipse" src="./public/imgs/Ellipse 1.svg" alt="ellipse icon">
-                <img class="statsCards__card__image--person" src="./public/imgs/Person 2.svg" alt="person icon">
-                </img></img>
+                <img class="statsCards__card__image--person" src="./public/imgs/Person 2.svg" alt="person icon" />
+                </img>
             </div>
             <p class="statsCards__card__number">100000+</p>
             <p class="statsCards__card__description">daily entries</p>
         </article>
         <div class="statsCards__card">
             <div class="statsCards__card__image">
-                <img class="statsCards__card__image--ellipse" src="./public/imgs/Ellipse 2.svg" alt="ellipse icon">
-                <img class="statsCards__card__image--eye" src="./public/imgs/Eye 2.svg" alt="eye icon">
+                <img class="statsCards__card__image--ellipse" src="./public/imgs/Ellipse 2.svg" alt="ellipse icon" />
+                <img class="statsCards__card__image--eye" src="./public/imgs/Eye 2.svg" alt="eye icon" />
             </div>
             <p class="statsCards__card__number">2000000+</p>
             <p class="statsCards__card__description">seen products every day</p>
         </div>
         <div class="statsCards__card">
             <div class="statsCards__card__image">
-                <img class="statsCards__card__image--ellipse" src="./public/imgs/Ellipse 3.svg" alt="ellipse icon">
-                <img class="statsCards__card__image--catalog" src="./public/imgs/Catalog 2.svg" alt="catalog icon">
+                <img class="statsCards__card__image--ellipse" src="./public/imgs/Ellipse 3.svg" alt="ellipse icon" />
+                <img class="statsCards__card__image--catalog" src="./public/imgs/Catalog 2.svg" alt="catalog icon" />
             </div>
             <p class="statsCards__card__number">10000+</p>
             <p class="statsCards__card__description">added posts daily</p>
@@ -78,9 +89,10 @@
         <div class="productCards__container">
             <div class="productCards__container__card one">
                 <div class="productCards__container__card__img_content">
-                    <img src="./public/imgs/968152a9810c2dd0dfe5197fa1160c1c.png" alt=""
-                        class="productCards__container__card__image--laptop">
-                    <img src="./public/imgs/Frame 11.svg" alt="" class="productCards__container__card__image--pink">
+                    <img src="./public/imgs/968152a9810c2dd0dfe5197fa1160c1c.png" alt="laptop"
+                        class="productCards__container__card__image--laptop" />
+                    <img src="./public/imgs/Frame 11.svg" alt="pink circle"
+                        class="productCards__container__card__image--pink" />
                 </div>
                 <div class="productCards__container__card__text_content one">
                     <h3 class="productCards__container__card__title">Be always first</h3>
@@ -97,10 +109,10 @@
         <div class="productCards__container">
             <div class="productCards__container__card two">
                 <div class="productCards__container__card__img_content two">
-                    <img src="./public/imgs/cfa426ef95f85cfe95fc8ff2cf7795da.png" width="175px" alt=""
-                        class="productCards__container__card__image--mobile">
-                    <img src="./public/imgs/Ellipse 2.svg" width="125px"
-                        class="productCards__container__card__image--blue" alt="">
+                    <img src="./public/imgs/cfa426ef95f85cfe95fc8ff2cf7795da.png" alt="mobile"
+                        class="productCards__container__card__image--mobile" />
+                    <img src="./public/imgs/Ellipse 2.svg" class="productCards__container__card__image--blue"
+                        alt="blue circle" />
                 </div>
                 <div class="productCards__container__card__text_content two">
                     <h3 class="productCards__container__card__title">Your shop is where you are!</h3>
@@ -130,7 +142,7 @@
                 </div>
             </div>
             <div class="productCards__container__trumpet_container">
-                <img class="trumpet" src="./public/imgs/b58a61ad9af3bec050306223d00a9ed8.png" alt="">
+                <img class="trumpet" src="./public/imgs/b58a61ad9af3bec050306223d00a9ed8.png" alt="trumpet" />
             </div>
         </div>
     </section>
@@ -142,32 +154,33 @@
                 <div class="priceCards__container--content">
                     <div class="priceCards__container__rates">
                         <h4>Basic</h4>
-                        <p class="priceCards__container__rates__price pink">$0</p>
+                        <p class="priceCards__container__rates__price pink"><span class="currency">$</span><span
+                                class="currencyValue">0</span></p>
                     </div>
                     <div class="priceCards__container__features">
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">100 MB HDD</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">1 Subdomain</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">2 E-mails</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg"
-                                alt="">
+                                alt="red checkbox" />
                             <p class="priceCards__container__features__item--description">Two years license</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg"
-                                alt="">
+                                alt="red checkbox" />
                             <p class="priceCards__container__features__item--description">Full support</p>
                         </div>
                     </div>
@@ -178,33 +191,34 @@
                 <div class="priceCards__container--content">
                     <div class="priceCards__container__rates">
                         <h4>Professional</h4>
-                        <p class="priceCards__container__rates__price blue">$25</p>
+                        <p class="priceCards__container__rates__price blue"><span class="currency">$</span><span
+                                class="currencyValue">25</span></p>
                         <p class="priceCards__container__rates__text">Limited offer</p>
                     </div>
                     <div class="priceCards__container__features">
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">500 MB HDD</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">2 Subdomain</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">5 E-mails</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">One year license</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/cross.svg"
-                                alt="">
+                                alt="red checkbox" />
                             <p class="priceCards__container__features__item--description">Full support</p>
                         </div>
                     </div>
@@ -215,33 +229,34 @@
                 <div class="priceCards__container--content">
                     <div class="priceCards__container__rates">
                         <h4>Premium</h4>
-                        <p class="priceCards__container__rates__price green">$60</p>
+                        <p class="priceCards__container__rates__price green"><span class="currency">$</span><span
+                                class="currencyValue">60</span></p>
                         <p class="priceCards__container__rates__text">Limited offer</p>
                     </div>
                     <div class="priceCards__container__features">
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">2 GB HDD</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">2 Subdomain</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">20 E-mails</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">Two year license</p>
                         </div>
                         <div class="priceCards__container__features__item">
                             <img class="priceCards__container__features__item--image" src="./public/imgs/Checkbox.svg"
-                                alt="">
+                                alt="green checkbox" />
                             <p class="priceCards__container__features__item--description">Full support</p>
                         </div>
                     </div>
@@ -249,7 +264,42 @@
                 <button class="priceCards__container__button green">Begin</button>
             </div>
         </div>
+        <div class="priceCards__buttonsCurrency">
+            <div class="priceCards__buttonsCurrency__usd_container selected">
+                <div class="priceCards__buttonsCurrency__usd_container--usd">USD</div>
+            </div>
+            <div class="priceCards__buttonsCurrency__eur_container">
+                <div class="priceCards__buttonsCurrency__eur_container--eur">EUR</div>
+            </div>
+            <div class="priceCards__buttonsCurrency__gbp_container">
+                <div class="priceCards__buttonsCurrency__gbp_container--gbp">GBP</div>
+            </div>
+        </div>
     </section>
+
+    <div id="slider" class="slider">
+        <div class="slider__container">
+            <img src="./public/imgs/slider/StockSnap_959IURDRGJ.jpg" alt="picture slider"
+                class="slider__container__slide" />
+            <img src="./public/imgs/slider/StockSnap_AEENLCARXY.jpg" alt="picture slider"
+                class="slider__container__slide" />
+            <img src="./public/imgs/slider/iso-republic-computer-circuit.jpg" alt="picture slider"
+                class="slider__container__slide" />
+            <img src="./public/imgs/slider/negative-space-digital-clock-desk-notepad-plant-julian-bachlet-thumb-1.jpg"
+                alt="picture slider" class="slider__container__slide" />
+            <img src="./public/imgs/slider/StockSnap_SFKZHJODOV.jpg" alt="picture slider"
+                class="slider__container__slide" />
+            <div class="slider__container__prev">&#10094</div>
+            <div class="slider__container__next">&#10095</div>
+            <div class="slider__container__dots">
+                <img class="slider__container__dots__dot selected" src="./public/imgs/circle.png" alt="dot" />
+                <img class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
+                <img class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
+                <img class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
+                <img class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
+            </div>
+        </div>
+    </div>
 
     <section class="contactForm">
         <div>
@@ -266,14 +316,15 @@
                 </div>
             </div>
         </div>
-        <form class="contactForm__form" action="#">
+        <form class="contactForm__form" action="/">
             <label class="contactForm__form__label" for="name">NAME</label>
-            <input class="contactForm__form__name" type="text" name="name" id="name">
+            <input class="contactForm__form__name" type="text" placeholder="" name="name" id="name" maxlength="100">
             <label class="contactForm__form__label" for="email">EMAIL</label>
-            <input class="contactForm__form__email type=email" name="email" id="email">
+            <input class="contactForm__form__email" type="text" placeholder="" name="email" id="email">
             <div class="contactForm__form__consent">
                 <input class="contactForm__form__consent__checkbox" type="checkbox" name="checkbox" id="checkbox">
-                <p class="contactForm__form__consent__text">I hereby give consent for my personal data included in my
+                <label class="contactForm__form__consent__text">I hereby give consent for my personal data included in
+                    my
                     application to
                     be
                     processed for the purposes of the
@@ -283,11 +334,12 @@
                     Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free
                     movement of such
                     data, and repealing Directive 95/46/EC (Data Protection Directive)
-                </p>
+                </label>
             </div>
             <button class="contactForm__form__button">Send</button>
         </form>
     </section>
+    <button class="returnTop">TOP</button>
 
     <footer class="footer">
         <div class="footer__copyright">
@@ -295,10 +347,11 @@
             <p class="footer__copyright__subtitle">© 2022 OXYGEN, All Rights Reserved</p>
         </div>
         <div class="footer__socialMedia">
-            <img class="footer__socialMedia__twitter" src="./public/imgs/Twitter (2) 2.svg" alt="twitter icon">
-            <img class="footer__socialMedia__facebook" src="./public/imgs/Facebook (3) 2.svg" alt="facebook icon">
+            <img class="footer__socialMedia__twitter" src="./public/imgs/Twitter (2) 2.svg" alt="twitter icon" />
+            <img class="footer__socialMedia__facebook" src="./public/imgs/Facebook (3) 2.svg" alt="facebook icon" />
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

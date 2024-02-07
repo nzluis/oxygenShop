@@ -1,22 +1,13 @@
-/*
-
-    EJERCICIOS GITHUB
-
-    FUNCIONO A LA PRIMERA!!!
-
-    EL CAMBIO SERA ESCRIBIR OTRO TITULO
-
-
-*/
-
 @use "./styles/nav";
 @use "./styles/intro";
 @use "./styles/banner";
 @use "./styles/statsCards";
 @use "./styles/productCards";
 @use "./styles/priceCards";
+@use "./styles/slider";
 @use "./styles/contactForm";
 @use "./styles/footer.scss";
+@use "./styles/modal.scss";
 
 * {
     box-sizing: border-box;
@@ -40,4 +31,11 @@ button {
     border-radius: 2.5rem;
     background: #08A6E4;
     cursor: pointer;
+}
+
+.returnTop {
+    position: relative;
+    top: -.8em;
+    left: 2em;
+    padding: 1em 1em;
 }

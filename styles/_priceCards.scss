@@ -14,11 +14,15 @@
     &__container {
         position: relative;
         display: inline-block;
-        width: 85%;
-        margin: 1em 2em;
+        width: 78%;
+        margin: 2.3em 3em;
         border: 2px solid #FB3B64;
         border-radius: 25px;
         padding: 1.5em 10%;
+
+        &.pink {
+            margin-top: 1em;
+        }
 
         &__rates,
         &__features {
@@ -113,6 +117,58 @@
                 line-height: normal;
             }
         }
+
+    }
+
+    &__buttonsCurrency {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #f7f7f7;
+        height: 4em;
+        border-radius: 8em;
+        margin: 2.3em 10% 0 10%;
+        border: 1px solid black;
+        cursor: pointer;
+
+        &__eur_container {
+            opacity: .8;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            height: 100%;
+            width: 33%;
+        }
+
+        &__usd_container,
+        &__gbp_container {
+            opacity: .8;
+            height: 100%;
+            width: 33%;
+        }
+
+        &__usd_container--usd,
+        &__eur_container--eur,
+        &__gbp_container--gbp {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        &__eur_container:hover,
+        &__usd_container:hover,
+        &__gbp_container:hover {
+            opacity: 1;
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        &__eur_container.selected,
+        &__usd_container.selected,
+        &__gbp_container.selected {
+            opacity: 1;
+            font-weight: bolder;
+        }
     }
 
     &__container--content {
@@ -127,8 +183,8 @@
     .priceCards {
 
         &__container {
-            margin: 1em 0rem;
-            padding: 1.5em 5%;
+            margin: 2em 0rem;
+            padding: .5em 5% 1.5em 5%;
         }
     }
 }
@@ -138,7 +194,6 @@
     .priceCards {
 
         &__container {
-            width: 90%;
 
             &__features {
                 padding-left: .5em;
@@ -152,7 +207,8 @@
         padding-bottom: 3em;
 
         &__title {
-            margin-bottom: 1.7em;
+            margin-top: 3.5em;
+            margin-bottom: 1em;
         }
 
         &__containers {
@@ -160,7 +216,7 @@
         }
 
         &__container {
-            width: 18%;
+            width: 24%;
             padding: 2em 0 4.5em 0;
             transition: all .5s;
 
@@ -200,6 +256,10 @@
             display: flex;
             flex-direction: column;
             height: 23em;
+        }
+
+        &__buttonsCurrency {
+            margin-top: 5em;
         }
     }
 }
