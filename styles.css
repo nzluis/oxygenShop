@@ -434,6 +434,7 @@
 }
 .priceCards {
   text-align: center;
+  position: relative;
 }
 .priceCards__title {
   margin: 1.5em 0 0 0;
@@ -532,47 +533,33 @@
   font-weight: 400;
   line-height: normal;
 }
-.priceCards__buttonsCurrency {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #f7f7f7;
-  height: 4em;
-  border-radius: 8em;
-  margin: 2.3em 10% 0 10%;
-  border: 1px solid black;
-  cursor: pointer;
-}
-.priceCards__buttonsCurrency__eur_container {
-  opacity: 0.8;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  height: 100%;
-  width: 33%;
-}
-.priceCards__buttonsCurrency__usd_container, .priceCards__buttonsCurrency__gbp_container {
-  opacity: 0.8;
-  height: 100%;
-  width: 33%;
-}
-.priceCards__buttonsCurrency__usd_container--usd, .priceCards__buttonsCurrency__eur_container--eur, .priceCards__buttonsCurrency__gbp_container--gbp {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.priceCards__buttonsCurrency__eur_container:hover, .priceCards__buttonsCurrency__usd_container:hover, .priceCards__buttonsCurrency__gbp_container:hover {
-  opacity: 1;
-  font-weight: bolder;
-  font-size: larger;
-}
-.priceCards__buttonsCurrency__eur_container.selected, .priceCards__buttonsCurrency__usd_container.selected, .priceCards__buttonsCurrency__gbp_container.selected {
-  opacity: 1;
-  font-weight: bolder;
-}
 .priceCards__container--content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.priceCards__currency_select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+.priceCards__currency_select:hover {
+  border: 1px solid white;
+}
+.priceCards__currency_select:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
 }
 
 @media only screen and (max-width: 485px) {
@@ -629,8 +616,8 @@
     flex-direction: column;
     height: 23em;
   }
-  .priceCards__buttonsCurrency {
-    margin-top: 5em;
+  .priceCards__currency_select {
+    margin-top: 0;
   }
 }
 .slider {
@@ -763,12 +750,36 @@
 }
 .contactForm__form__consent {
   display: inline-flex;
+  position: relative;
   gap: 0.6rem;
 }
 .contactForm__form__consent__checkbox {
   align-self: flex-start;
-  border-radius: 0.25rem;
-  border: 1px solid #95989A;
+  position: relative;
+  top: 0.1em;
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 0.1rem;
+  border: 0.1rem solid rgba(112, 112, 112, 0.7);
+  border-radius: 0.2rem;
+}
+.contactForm__form__consent input[type=checkbox]::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  clip-path: polygon(18% 49%, 41% 73%, 80% 20%, 86% 23%, 41% 85%, 13% 55%);
+  transform: scale(0);
+  background-color: #08A6E4;
+}
+.contactForm__form__consent input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+.contactForm__form__consent input[type=checkbox]:checked::before:hover {
+  color: black;
 }
 .contactForm__form__consent__text {
   color: #707070;
@@ -804,6 +815,24 @@
   .contactForm__form {
     width: 50%;
     margin: 0;
+  }
+}
+.returnTop {
+  float: right;
+  position: relative;
+  top: -0.8em;
+  right: 2em;
+  padding: 1em 1em;
+  background-color: #f7f7f7;
+  border: 0.1em solid rgba(0, 0, 0, 0.3);
+  color: black;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 1000px) {
+  .returnTop {
+    left: 13.9em;
+    margin-top: 5em;
   }
 }
 .footer {
@@ -969,6 +998,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-width: 320px;
 }
@@ -985,13 +1018,6 @@ button {
   border-radius: 2.5rem;
   background: #08A6E4;
   cursor: pointer;
-}
-
-.returnTop {
-  position: relative;
-  top: -0.8em;
-  left: 2em;
-  padding: 1em 1em;
 }
 
 /*# sourceMappingURL=styles.css.map */

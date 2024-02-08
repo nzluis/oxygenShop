@@ -47,17 +47,18 @@ function handleScroll() {
     return scrolled
 }
 
+
 //---------------------------------------------------
 
 //////////////////RETURN TO TOP//////////////////
 
 const returnTopButton = document.querySelector('.returnTop')
 
-returnTopButton.addEventListener('click', handleReturnTop)
-
-function handleReturnTop() {
-    document.documentElement.scrollTop = 0
-}
+returnTopButton.addEventListener('click', () => {
+    setTimeout(() => {
+        document.documentElement.scrollTop = 0
+    }, 200) 
+})
 
 //---------------------------------------------------
 
@@ -164,11 +165,15 @@ async function fetchData(emailNode, nameNode, checkboxNode) {
             })
         }
         
-        const data = await response.json()
-        if (data.name && data.email )alert(`Form successfully completed for ${data.name} and email account: ${data.email}`)
-        if (data.email && !data.name)alert(`Successfully joined our newsletter ${data.email}`)
+        if (!response.ok) throw new Error ('Server returned ' + response.status + ' status code')
+        else {
+            const data = await response.json()
+            if (data.name && data.email )alert(`Form successfully completed for ${data.name} and email account: ${data.email}`)
+            if (data.email && !data.name)alert(`Successfully joined our newsletter ${data.email}`)
+    }
     } catch (error) {
-            console.log(error.message)
+        throw new Error ('There was a problem with Fetch operation: ' + error.message)
+
     }
  } 
 
@@ -246,61 +251,55 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //////////////////CURRENCY SELECTOR//////////////////
 
-const usd_container = document.querySelector(".priceCards__buttonsCurrency__usd_container")
-const gbp_container = document.querySelector(".priceCards__buttonsCurrency__gbp_container")
-const eur_container = document.querySelector(".priceCards__buttonsCurrency__eur_container")
+const currency_select = document.querySelector(".priceCards__currency_select")
+console.log
 const currency = document.querySelectorAll(".currency")
 const currencyValue = document.querySelectorAll(".currencyValue")
 const defaultValues = [0,25,60];
 
-function add_class(container) {
-    container.classList.add("selected")
-}
-function remove_class(container) {
-    container.classList.remove("selected")
-}
-
-usd_container.addEventListener('click', () => {
-    add_class(usd_container)
-    remove_class(eur_container)
-    remove_class(gbp_container)
-    currency.forEach(spanCurrencyNode => {
-        spanCurrencyNode.textContent = "$"
-    })
-    currencyValue[1].textContent = defaultValues[1]
-    currencyValue[2].textContent = defaultValues[2]
-})
-
-eur_container.addEventListener('click', () => {
-    add_class(eur_container)
-    remove_class(usd_container)
-    remove_class(gbp_container)
-    currency.forEach(spanCurrencyNode => {
-        spanCurrencyNode.textContent = "€"
-    })
-    currencyValue.forEach((spanValueNode, i) => {
-        spanValueNode.textContent = Math.round(defaultValues[i] * usdToEurExchange)
-    })
-})
-
-gbp_container.addEventListener('click', () => {
-    add_class(gbp_container)
-    remove_class(eur_container)
-    remove_class(usd_container)
-    currency.forEach(spanCurrencyNode => {
-        spanCurrencyNode.textContent = "£"
-    })
-    currencyValue.forEach((spanValueNode, i) => {
-        spanValueNode.textContent = Math.round(defaultValues[i]* usdToGbpExchange)
-    })
+currency_select.addEventListener('change', () => {
+    switch (currency_select.value){
+        case 'usd':
+            currency.forEach(spanCurrencyNode => {
+                spanCurrencyNode.textContent = "$"
+            })
+            currencyValue[1].textContent = defaultValues[1]
+            currencyValue[2].textContent = defaultValues[2]
+            break
+        case 'eur':
+            currency.forEach(spanCurrencyNode => {
+                spanCurrencyNode.textContent = "€"
+            })
+            currencyValue.forEach((spanValueNode, i) => {
+                spanValueNode.textContent = Math.round(defaultValues[i] * usdToEurExchange)
+            })
+        break
+        case 'gbp':
+            currency.forEach(spanCurrencyNode => {
+                spanCurrencyNode.textContent = "£"
+            })
+            currencyValue.forEach((spanValueNode, i) => {
+                spanValueNode.textContent = Math.round(defaultValues[i]* usdToGbpExchange)
+            })
+        break
+        default:
+            alert('Error: that choice is not allowed')
+    }
 })
 
 async function fetchCurrency() {
-    const response = await fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json", {
-        method: 'GET',
-    })
-    const data = await response.json()
-    return data.usd
+    try {
+        const response = await fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json", {
+            method: 'GET',
+        })
+        if (!response.ok) throw new Error('Server return ' + response.status + ' status code')
+        else {
+            const data = await response.json()
+            return data.usd
+        }
+    } catch (error) {
+        throw new Error ('There was a problem with Fetch operation: ' + error.message)
+    }
 }
 let usdToEurExchange
 let usdToGbpExchange
@@ -311,20 +310,17 @@ fetchCurrency().then((data) => usdToGbpExchange = data.gbp)
 
 //////////////////SLIDER//////////////////
 
-const slides = document.querySelectorAll(`.slider__container__slide`)
-const dots = document.querySelectorAll('.slider__container__dots__dot')
-
 class Slider {
-    // id
-    // constructor(id) {
-    //     this.id = id
-    // }
+    constructor(classSlide, classDot) {
+        this.slides = document.querySelectorAll(`.${classSlide}`)
+        this.dots = document.querySelectorAll(`.${classDot}`)
+        this.currentSlide = 0;
+        this.maxSlide = this.slides.length - 1;
+    }
     
-    currentSlide = 0;
-    maxSlide = slides.length - 1;
 
     slidePosition = () => {
-        slides.forEach((slide, index) => {
+        this.slides.forEach((slide, index) => {
             slide.style.transform = `translateX(${100 * (index - this.currentSlide)}%)`;
         });
     }
@@ -337,12 +333,6 @@ class Slider {
         this.currentSlide === 0 ? this.currentSlide = this.maxSlide : this.currentSlide--
     }
     
-    updateDots = () => {
-        dots.forEach( (dot, index) => {
-            index === this.currentSlide ? dot.classList.add('selected') : dot.classList.remove('selected')
-        })
-    }
-
     setAutomatic = () =>  setTimeout(() => {
         this.nextSlide()
         this.slidePosition()
@@ -350,11 +340,25 @@ class Slider {
         this.setAutomatic()
     },5000)
 
+    updateDots = () => {
+        this.dots.forEach( (dot, index) => {
+            index === this.currentSlide ? dot.classList.add('selected') : dot.classList.remove('selected')
+        })
+    }
+
+    dotsHandle = () => this.dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            slider.currentSlide = index
+            slider.slidePosition()
+            slider.updateDots()
+        })
+    })
 }
 
-const slider = new Slider("slider")
+const slider = new Slider("slider__container__slide", "slider__container__dots__dot")
 slider.slidePosition()
 slider.setAutomatic()
+slider.dotsHandle()
 
 const nextButton = document.querySelector('.slider__container__next')
 const prevButton = document.querySelector('.slider__container__prev')
@@ -369,13 +373,5 @@ prevButton.addEventListener('click', () => {
     slider.previousSlide()
     slider.slidePosition()
     slider.updateDots()
-})
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        slider.currentSlide = index
-        slider.slidePosition()
-        slider.updateDots()
-    })
 })
 //---------------------------------------------------

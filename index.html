@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -149,6 +150,11 @@
 
     <section class="priceCards">
         <h3 class="priceCards__title">Pricing</h3>
+        <select name="currency_select" class="priceCards__currency_select">
+            <option value="usd" selected>USD</option>
+            <option value="eur">EUR</option>
+            <option value="gbp">GBP</option>
+        </select>
         <div class="pricesCards__containers">
             <div class="priceCards__container pink">
                 <div class="priceCards__container--content">
@@ -264,7 +270,7 @@
                 <button class="priceCards__container__button green">Begin</button>
             </div>
         </div>
-        <div class="priceCards__buttonsCurrency">
+        <!-- <div class="priceCards__buttonsCurrency">
             <div class="priceCards__buttonsCurrency__usd_container selected">
                 <div class="priceCards__buttonsCurrency__usd_container--usd">USD</div>
             </div>
@@ -274,29 +280,30 @@
             <div class="priceCards__buttonsCurrency__gbp_container">
                 <div class="priceCards__buttonsCurrency__gbp_container--gbp">GBP</div>
             </div>
-        </div>
+        </div> -->
+
     </section>
 
-    <div id="slider" class="slider">
-        <div class="slider__container">
-            <img src="./public/imgs/slider/StockSnap_959IURDRGJ.jpg" alt="picture slider"
+    <div class="slider">
+        <div class="slider__container" id="slider">
+            <img src="./public/imgs/slider/StockSnap_959IURDRGJ.jpg" alt="picture slider" id="slide"
                 class="slider__container__slide" />
-            <img src="./public/imgs/slider/StockSnap_AEENLCARXY.jpg" alt="picture slider"
+            <img src="./public/imgs/slider/StockSnap_AEENLCARXY.jpg" alt="picture slider" id="slide"
                 class="slider__container__slide" />
-            <img src="./public/imgs/slider/iso-republic-computer-circuit.jpg" alt="picture slider"
+            <img src="./public/imgs/slider/iso-republic-computer-circuit.jpg" alt="picture slider" id="slide"
                 class="slider__container__slide" />
             <img src="./public/imgs/slider/negative-space-digital-clock-desk-notepad-plant-julian-bachlet-thumb-1.jpg"
-                alt="picture slider" class="slider__container__slide" />
-            <img src="./public/imgs/slider/StockSnap_SFKZHJODOV.jpg" alt="picture slider"
+                id="slide" alt="picture slider" class="slider__container__slide" />
+            <img src="./public/imgs/slider/StockSnap_SFKZHJODOV.jpg" alt="picture slider" id="slide"
                 class="slider__container__slide" />
             <div class="slider__container__prev">&#10094</div>
             <div class="slider__container__next">&#10095</div>
             <div class="slider__container__dots">
-                <img class="slider__container__dots__dot selected" src="./public/imgs/circle.png" alt="dot" />
-                <img class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
-                <img class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
-                <img class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
-                <img class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
+                <img id="dot" class="slider__container__dots__dot selected" src="./public/imgs/circle.png" alt="dot" />
+                <img id="dot" class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
+                <img id="dot" class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
+                <img id="dot" class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
+                <img id="dot" class="slider__container__dots__dot" src="./public/imgs/circle.png" alt="dot" />
             </div>
         </div>
     </div>
@@ -351,7 +358,6 @@
             <img class="footer__socialMedia__facebook" src="./public/imgs/Facebook (3) 2.svg" alt="facebook icon" />
         </div>
     </footer>
-    <script src="script.js"></script>
 </body>
 
 </html>

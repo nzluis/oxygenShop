@@ -1,0 +1,19 @@
+.returnTop {
+    float: right;
+    position: relative;
+    top: -.8em;
+    right: 2em;
+    padding: 1em 1em;
+    background-color: #f7f7f7;
+    border: .1em solid rgba($color: #000000, $alpha: .3);
+    color: black;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 1000px) {
+    .returnTop {
+        left: 13.9em;
+        margin-top: 5em;
+        // right: 5em;
+    }
+}
