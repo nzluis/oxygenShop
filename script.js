@@ -47,17 +47,16 @@ function handleScroll() {
     return scrolled
 }
 
+
 //---------------------------------------------------
 
 //////////////////RETURN TO TOP//////////////////
 
 const returnTopButton = document.querySelector('.returnTop')
 
-returnTopButton.addEventListener('click', handleReturnTop)
-
-function handleReturnTop() {
+returnTopButton.addEventListener('click', () => {
     document.documentElement.scrollTop = 0
-}
+})
 
 //---------------------------------------------------
 
