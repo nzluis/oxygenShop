@@ -247,46 +247,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //////////////////CURRENCY SELECTOR//////////////////
 
-// const usd_container = document.querySelector(".priceCards__buttonsCurrency__usd_container")
-// const gbp_container = document.querySelector(".priceCards__buttonsCurrency__gbp_container")
-// const eur_container = document.querySelector(".priceCards__buttonsCurrency__eur_container")
 const currency_select = document.querySelector(".priceCards__currency_select")
 console.log
 const currency = document.querySelectorAll(".currency")
 const currencyValue = document.querySelectorAll(".currencyValue")
 const defaultValues = [0,25,60];
 
-// function add_class(container) {
-//     container.classList.add("selected")
-// }
-// function remove_class(container) {
-//     container.classList.remove("selected")
-// }
-
 currency_select.addEventListener('change', () => {
-    console.log(currency_select.value)
-    if (currency_select.value === 'usd') {
-        currency.forEach(spanCurrencyNode => {
-            spanCurrencyNode.textContent = "$"
-        })
-        currencyValue[1].textContent = defaultValues[1]
-        currencyValue[2].textContent = defaultValues[2]
-    } else if (currency_select.value === 'eur') {
-        currency.forEach(spanCurrencyNode => {
-            spanCurrencyNode.textContent = "€"
-        })
-        currencyValue.forEach((spanValueNode, i) => {
-            spanValueNode.textContent = Math.round(defaultValues[i] * usdToEurExchange)
-        })
-    } else if (currency_select.value === 'gbp') {
-        currency.forEach(spanCurrencyNode => {
-            spanCurrencyNode.textContent = "£"
-        })
-        currencyValue.forEach((spanValueNode, i) => {
-            spanValueNode.textContent = Math.round(defaultValues[i]* usdToGbpExchange)
-        })
-    } else {
-        alert('Error: that choice is not allowed')
+    switch (currency_select.value){
+        case 'usd':
+            currency.forEach(spanCurrencyNode => {
+                spanCurrencyNode.textContent = "$"
+            })
+            currencyValue[1].textContent = defaultValues[1]
+            currencyValue[2].textContent = defaultValues[2]
+            break
+        case 'eur':
+            currency.forEach(spanCurrencyNode => {
+                spanCurrencyNode.textContent = "€"
+            })
+            currencyValue.forEach((spanValueNode, i) => {
+                spanValueNode.textContent = Math.round(defaultValues[i] * usdToEurExchange)
+            })
+        break
+        case 'gbp':
+            currency.forEach(spanCurrencyNode => {
+                spanCurrencyNode.textContent = "£"
+            })
+            currencyValue.forEach((spanValueNode, i) => {
+                spanValueNode.textContent = Math.round(defaultValues[i]* usdToGbpExchange)
+            })
+        break
+        default:
+            alert('Error: that choice is not allowed')
     }
 })
 
