@@ -165,11 +165,15 @@ async function fetchData(emailNode, nameNode, checkboxNode) {
             })
         }
         
-        const data = await response.json()
-        if (data.name && data.email )alert(`Form successfully completed for ${data.name} and email account: ${data.email}`)
-        if (data.email && !data.name)alert(`Successfully joined our newsletter ${data.email}`)
+        if (!response.ok) throw new Error ('Server returned ' + response.status + ' status code')
+        else {
+            const data = await response.json()
+            if (data.name && data.email )alert(`Form successfully completed for ${data.name} and email account: ${data.email}`)
+            if (data.email && !data.name)alert(`Successfully joined our newsletter ${data.email}`)
+    }
     } catch (error) {
-            console.log(error.message)
+        throw new Error ('There was a problem with Fetch operation: ' + error.message)
+
     }
  } 
 
@@ -284,11 +288,18 @@ currency_select.addEventListener('change', () => {
 })
 
 async function fetchCurrency() {
-    const response = await fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json", {
-        method: 'GET',
-    })
-    const data = await response.json()
-    return data.usd
+    try {
+        const response = await fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json", {
+            method: 'GET',
+        })
+        if (!response.ok) throw new Error('Server return ' + response.status + ' status code')
+        else {
+            const data = await response.json()
+            return data.usd
+        }
+    } catch (error) {
+        throw new Error ('There was a problem with Fetch operation: ' + error.message)
+    }
 }
 let usdToEurExchange
 let usdToGbpExchange
