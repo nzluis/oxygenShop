@@ -55,7 +55,9 @@ function handleScroll() {
 const returnTopButton = document.querySelector('.returnTop')
 
 returnTopButton.addEventListener('click', () => {
-    document.documentElement.scrollTop = 0
+    setTimeout(() => {
+        document.documentElement.scrollTop = 0
+    }, 200) 
 })
 
 //---------------------------------------------------
