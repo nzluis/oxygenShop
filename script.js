@@ -245,53 +245,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //////////////////CURRENCY SELECTOR//////////////////
 
-const usd_container = document.querySelector(".priceCards__buttonsCurrency__usd_container")
-const gbp_container = document.querySelector(".priceCards__buttonsCurrency__gbp_container")
-const eur_container = document.querySelector(".priceCards__buttonsCurrency__eur_container")
+// const usd_container = document.querySelector(".priceCards__buttonsCurrency__usd_container")
+// const gbp_container = document.querySelector(".priceCards__buttonsCurrency__gbp_container")
+// const eur_container = document.querySelector(".priceCards__buttonsCurrency__eur_container")
+const currency_select = document.querySelector(".priceCards__currency_select")
+console.log
 const currency = document.querySelectorAll(".currency")
 const currencyValue = document.querySelectorAll(".currencyValue")
 const defaultValues = [0,25,60];
 
-function add_class(container) {
-    container.classList.add("selected")
-}
-function remove_class(container) {
-    container.classList.remove("selected")
-}
+// function add_class(container) {
+//     container.classList.add("selected")
+// }
+// function remove_class(container) {
+//     container.classList.remove("selected")
+// }
 
-usd_container.addEventListener('click', () => {
-    add_class(usd_container)
-    remove_class(eur_container)
-    remove_class(gbp_container)
-    currency.forEach(spanCurrencyNode => {
-        spanCurrencyNode.textContent = "$"
-    })
-    currencyValue[1].textContent = defaultValues[1]
-    currencyValue[2].textContent = defaultValues[2]
-})
-
-eur_container.addEventListener('click', () => {
-    add_class(eur_container)
-    remove_class(usd_container)
-    remove_class(gbp_container)
-    currency.forEach(spanCurrencyNode => {
-        spanCurrencyNode.textContent = "€"
-    })
-    currencyValue.forEach((spanValueNode, i) => {
-        spanValueNode.textContent = Math.round(defaultValues[i] * usdToEurExchange)
-    })
-})
-
-gbp_container.addEventListener('click', () => {
-    add_class(gbp_container)
-    remove_class(eur_container)
-    remove_class(usd_container)
-    currency.forEach(spanCurrencyNode => {
-        spanCurrencyNode.textContent = "£"
-    })
-    currencyValue.forEach((spanValueNode, i) => {
-        spanValueNode.textContent = Math.round(defaultValues[i]* usdToGbpExchange)
-    })
+currency_select.addEventListener('change', () => {
+    console.log(currency_select.value)
+    if (currency_select.value === 'usd') {
+        currency.forEach(spanCurrencyNode => {
+            spanCurrencyNode.textContent = "$"
+        })
+        currencyValue[1].textContent = defaultValues[1]
+        currencyValue[2].textContent = defaultValues[2]
+    } else if (currency_select.value === 'eur') {
+        currency.forEach(spanCurrencyNode => {
+            spanCurrencyNode.textContent = "€"
+        })
+        currencyValue.forEach((spanValueNode, i) => {
+            spanValueNode.textContent = Math.round(defaultValues[i] * usdToEurExchange)
+        })
+    } else if (currency_select.value === 'gbp') {
+        currency.forEach(spanCurrencyNode => {
+            spanCurrencyNode.textContent = "£"
+        })
+        currencyValue.forEach((spanValueNode, i) => {
+            spanValueNode.textContent = Math.round(defaultValues[i]* usdToGbpExchange)
+        })
+    } else {
+        alert('Error: that choice is not allowed')
+    }
 })
 
 async function fetchCurrency() {
