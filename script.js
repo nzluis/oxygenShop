@@ -69,7 +69,7 @@ const form_name = document.querySelector(".contactForm__form__name")
 const checkbox = document.querySelector(".contactForm__form__consent__checkbox")
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
-form_name.addEventListener('input', () => {
+form_name.addEventListener('change', () => {
 
     if (form_name.value.length < 2 || form_name.value.length > 100) {
         form_name.classList.add("input-invalid")
@@ -80,7 +80,7 @@ form_name.addEventListener('input', () => {
     }
 })
 
-checkbox.addEventListener("input", () => {
+checkbox.addEventListener("change", () => {
 
     if (checkbox.checked) {
         checkbox.classList.remove("invalid")
@@ -101,7 +101,7 @@ function emailValidation(emailNode, test) {
     }
 }
 
-email.addEventListener('input', () => {
+email.addEventListener('change', () => {
     emailValidation(email, emailRegex)
 })
 
