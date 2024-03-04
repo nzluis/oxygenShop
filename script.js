@@ -347,8 +347,8 @@ slider.slidePosition()
 slider.setAutomatic()
 slider.dotsHandle()
 
-const nextButton = document.querySelector('.slider__container__next')
-const prevButton = document.querySelector('.slider__container__prev')
+const nextButton = document.getElementsByClassName('slider__container__next')[0]
+const prevButton = document.getElementsByClassName('slider__container__prev')[0]
 
 nextButton.addEventListener('click', () => {
     slider.nextSlide()
