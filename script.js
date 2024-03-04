@@ -140,30 +140,17 @@ document.addEventListener("DOMContentLoaded", function() {
 async function fetchData(emailNode, nameNode, checkboxNode) {
     try {  
         let response = {}
-        if (emailNode && !nameNode) {
             response = await fetch('https://jsonplaceholder.typicode.com/users', {
                 method: 'POST',
                 body: JSON.stringify({
                     email: emailNode.value,
+                    name: nameNode ? nameNode.value : null,
+                    consent: checkboxNode ? checkboxNode.checked : null,
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                 },
                 })
-        }
-        if (emailNode && nameNode && checkboxNode) {
-            response = await fetch('https://jsonplaceholder.typicode.com/users', {
-                method: 'POST',
-                body: JSON.stringify({
-                    email: emailNode.value,
-                    name: nameNode.value,
-                    consent: checkboxNode.checked,
-                }),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                },
-            })
-        }
         
         if (!response.ok) throw new Error ('Server returned ' + response.status + ' status code')
         else {
